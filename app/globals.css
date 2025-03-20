@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
 body {
-  background-color: #f0f0f0;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+}
+
+.enterprise-card {
+  background: radial-gradient(circle, rgba(255, 255, 108, 1), rgba(71, 108, 241, 1), rgba(108, 255, 152, 1), rgba(254, 120, 245, 1), rgba(58, 140, 229, 1), rgba(68, 244, 253, 1), rgba(71, 109, 239, 1));
+  /* background-origin: border-box; */
+  background-clip: border-box;
 }

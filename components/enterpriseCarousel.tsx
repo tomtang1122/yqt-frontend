@@ -3,8 +3,16 @@
 import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import { Enterprise } from "@TS/enterprise";
+import cashback from "@assets/cashback.png";
+import Image from "next/image";
+import { getProxyImageUrl } from "@lib/utils";
 
-export function EnterpriseCarousel() {
+export function EnterpriseCarousel({
+  enterprises,
+}: {
+  enterprises: Enterprise[];
+}) {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       align: "start",
@@ -73,12 +81,51 @@ export function EnterpriseCarousel() {
   return (
     <div className="overflow-hidden w-[1200px] mx-auto" ref={emblaRef}>
       <div className="flex flex-col h-[400px]">
-        <div className="bg-red-500 h-[200px] flex-[0_0_80%]">Slide 1</div>
-        <div className="bg-blue-500 h-[200px] flex-[0_0_80%]">Slide 2</div>
-        <div className="bg-green-500 h-[200px] flex-[0_0_80%]">Slide 3</div>
-        <div className="bg-yellow-500 h-[200px] flex-[0_0_80%]">Slide 4</div>
-        <div className="bg-purple-500 h-[200px] flex-[0_0_80%]">Slide 5</div>
-        <div className="bg-pink-500 h-[200px] flex-[0_0_80%]">Slide 6</div>
+        {enterprises.map((enterprise) => (
+          <div
+            key={enterprise.enterpriseID}
+            className="enterprise-card p-0.5 rounded-lg w-[400px] mb-6"
+          >
+            <div className="enterprise-card-container p-5 bg-white rounded-md bg-[linear-gradient(180deg,_#FFFBEF_0%,_#FFFFFF_100%)]">
+              <div className="flex items-center mb-4">
+                <div className="flex-1 h-12 relative">
+                  {enterprise.logo && (
+                    <Image
+                      className="object-contain object-left"
+                      src={getProxyImageUrl(enterprise.logo)}
+                      alt="企业 logo"
+                      fill
+                    />
+                  )}
+                </div>
+                <Image
+                  src={cashback}
+                  alt="企业促销logo"
+                  width={32}
+                  height={32}
+                />
+              </div>
+              <div className="text-[#E6A23C] text-xl mb-2">
+                {enterprise.name}
+              </div>
+              <div className="text-sm text-[#434343] mb-6">
+                <a href={enterprise.website} target="_blank">
+                  {enterprise.website}
+                </a>
+              </div>
+              <div className="flex gap-2">
+                {enterprise.tags?.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[12px] leading-4.5 py-0.5 px-1.5 text-[#8C8C8C] bg-[#F5F7FA] rounded-xs"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -4,9 +4,9 @@ interface FetchOptions extends Omit<RequestInit, "body"> {
   body?: unknown;
 }
 
-interface ApiResponse {
+interface ApiResponse<T> {
   success: boolean;
-  data?: unknown;
+  data?: T;
   message?: string;
   code?: number;
 }
@@ -17,10 +17,10 @@ interface ApiResponse {
  * @param options 请求选项
  * @returns Promise<ApiResponse>
  */
-async function fetchApi(
+async function fetchApi<T>(
   url: string,
   options: FetchOptions = {}
-): Promise<ApiResponse> {
+): Promise<ApiResponse<T>> {
   const {
     method = "GET",
     headers = {},
@@ -34,11 +34,11 @@ async function fetchApi(
   const queryParams = params
     ? `?${new URLSearchParams(params).toString()}`
     : "";
-  const fullUrl = `${url}${queryParams}`;
+  const fullUrl = `http://43.129.81.231:20009${url}${queryParams}`;
 
   // 构建请求头
   const requestHeaders: HeadersInit = {
-    "Content-Type": "application/json",
+    // "Content-Type": "application/json",
     operationID: Date.now().toString(),
     platform: "10",
     ...headers,
@@ -100,19 +100,27 @@ async function fetchApi(
  *   email: 'zhangsan@example.com'
  * });
  */
-export function get(url: string, options: FetchOptions = {}) {
-  return fetchApi(url, { ...options, method: "GET" });
+export function get<T>(url: string, options: FetchOptions = {}) {
+  return fetchApi<T>(url, { ...options, method: "GET" });
 }
-export function post(url: string, data?: unknown, options: FetchOptions = {}) {
-  return fetchApi(url, {
+export function post<T>(
+  url: string,
+  data?: unknown,
+  options: FetchOptions = {}
+) {
+  return fetchApi<T>(url, {
     ...options,
     method: "POST",
     body: data,
   });
 }
-export function put(url: string, data?: unknown, options: FetchOptions = {}) {
-  return fetchApi(url, { ...options, method: "PUT", body: data });
+export function put<T>(
+  url: string,
+  data?: unknown,
+  options: FetchOptions = {}
+) {
+  return fetchApi<T>(url, { ...options, method: "PUT", body: data });
 }
-export function del(url: string, options: FetchOptions = {}) {
-  return fetchApi(url, { ...options, method: "DELETE" });
+export function del<T>(url: string, options: FetchOptions = {}) {
+  return fetchApi<T>(url, { ...options, method: "DELETE" });
 }
