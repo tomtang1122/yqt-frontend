@@ -2,10 +2,23 @@
 
 body {
   font-family: Microsoft YaHei, Microsoft YaHei;
-}
+  cursor: default;
 
-.enterprise-card {
-  background: radial-gradient(circle, rgba(255, 255, 108, 1), rgba(71, 108, 241, 1), rgba(108, 255, 152, 1), rgba(254, 120, 245, 1), rgba(58, 140, 229, 1), rgba(68, 244, 253, 1), rgba(71, 109, 239, 1));
-  /* background-origin: border-box; */
-  background-clip: border-box;
+  /* 20+16+20 */
+  --ep-spacing: 56px;
+  --ep-header-height: 44px;
+  --ep-hero-height: 180px;
+  --ep-carousel-title-height: 24px;
+  --ep-footer-height: 48px;
+  --ep-carousel-height: calc(100dvh - var(--ep-header-height) - var(--ep-hero-height) - var(--ep-carousel-title-height) - var(--ep-footer-height) - var(--ep-spacing));
+  --eq-article-height: calc(100dvh - var(--ep-header-height) - var(--ep-footer-height));
+
+  @media (width >=80rem) {
+    /* 48+56+32 */
+    --ep-spacing: 136px;
+    --ep-header-height: 64px;
+    --ep-hero-height: 360px;
+    --ep-carousel-title-height: 30px;
+    --ep-footer-height: 60px;
+  }
 }
