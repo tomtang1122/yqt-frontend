@@ -31,7 +31,7 @@ export default function HeroBanner() {
       <div className="absolute top-0 left-0 w-full h-full pt-5 pl-4 xl:pt-10 xl:pl-[246px]">
         <h1
           className={clsx(
-            "text-2xl text-[#122C94] font-black mb-5.5 xl:text-7xl xl:mb-7",
+            "text-2xl text-[#122C94] mb-5.5 xl:text-7xl xl:mb-7",
             puHuiTi.className
           )}
         >
@@ -43,9 +43,6 @@ export default function HeroBanner() {
         <div className="bg-[#FDDB44] w-23 h-8 rounded-sm text-[#141414] flex flex-col items-center justify-center xl:w-35 xl:h-12.5">
           <span className="text-xs font-bold xl:text-base">安卓版下载</span>
           <span className="text-[10px] xl:text-xs">Android DL</span>
-        </div>
-        <div className="absolute bottom-0 right-0">
-          <Image src={bankQR} alt="银行二维码" />
         </div>
       </div>
     </div>
