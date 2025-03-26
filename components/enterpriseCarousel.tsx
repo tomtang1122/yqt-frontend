@@ -109,7 +109,6 @@ export function EnterpriseCarousel({
                           className="object-contain object-left"
                           src={getProxyImageUrl(enterprise.logo)}
                           alt="企业 logo"
-                          sizes="100%"
                           fill
                         />
                       )}
@@ -118,7 +117,6 @@ export function EnterpriseCarousel({
                       <Image
                         src={cashback}
                         alt="企业促销logo"
-                        sizes="100%"
                         fill
                       />
                     </div>
