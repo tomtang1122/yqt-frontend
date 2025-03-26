@@ -1,33 +1,50 @@
 import clsx from "clsx";
 import Image from "next/image";
-import heroImageDesktop from "@assets/banner-desktop.png";
-import heroImageMobile from "@assets/banner-mobile.png";
 import bankQR from "@assets/bank-QR.jpg";
 import localFont from "next/font/local";
+import { post } from "@lib/fetch";
+import { ClientConfigResponse } from "@TS/clientConfig";
+import { getProxyImageUrl } from "@lib/utils";
 
 const puHuiTi = localFont({
   src: "../public/font/AlibabaPuHuiTi-3-105-Heavy.woff2",
 });
 
-export default function HeroBanner() {
+export default async function HeroBanner() {
+  const { data: { data: { config } = {} } = {} } =
+    await post<ClientConfigResponse>(
+      "/client_config/get",
+      {},
+      {
+        headers: {
+          token:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiJpbUFkbWluIiwiVXNlclR5cGUiOjIsIlBsYXRmb3JtSUQiOjAsImV4cCI6MTc1MDc3NTMzMSwibmJmIjoxNzQyOTk5MjcxLCJpYXQiOjE3NDI5OTkzMzF9.iUQ6dyAevqzK-btJz48yLOhZk9PaEqoId2jjvmPoYlM",
+        },
+      }
+    );
+
   return (
     <div className="relative w-screen left-[50%] right-[50%] -mx-[50vw] h-[var(--ep-hero-height)]">
-      <Image
-        src={heroImageMobile}
-        alt="云雀台首页横幅"
-        fill
-        priority
-        className="object-cover xl:hidden"
-        sizes="100vw"
-      />
-      <Image
-        src={heroImageDesktop}
-        alt="云雀台首页横幅"
-        fill
-        priority
-        className="object-cover hidden xl:block"
-        sizes="100vw"
-      />
+      {config?.mobileBanner && (
+        <Image
+          src={getProxyImageUrl(config?.mobileBanner)}
+          alt="云雀台首页横幅|移动端"
+          fill
+          priority
+          className="object-cover xl:hidden"
+          sizes="100vw"
+        />
+      )}
+      {config?.pcBanner && (
+        <Image
+          src={getProxyImageUrl(config?.pcBanner)}
+          alt="云雀台首页横幅|PC端"
+          fill
+          priority
+          className="object-cover hidden xl:block"
+          sizes="100vw"
+        />
+      )}
       <div className="absolute top-0 left-0 w-full h-full pt-5 pl-4 xl:pt-10 xl:pl-[246px]">
         <h1
           className={clsx(

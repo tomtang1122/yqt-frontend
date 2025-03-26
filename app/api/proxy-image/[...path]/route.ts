@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export const IM_REQUEST_URL = "http://43.129.81.231:10002";
+export const IM_REQUEST_URL = "http://101.42.151.19:10002";
 
 async function proxyImage(url: string) {
   const response = await fetch(url);

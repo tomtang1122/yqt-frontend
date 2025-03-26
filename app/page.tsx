@@ -21,7 +21,7 @@ export default async function Home() {
     {
       headers: {
         token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiJpbUFkbWluIiwiVXNlclR5cGUiOjIsIlBsYXRmb3JtSUQiOjAsImV4cCI6MTc1MDIxNjc3NiwibmJmIjoxNzQyNDQwNzE2LCJpYXQiOjE3NDI0NDA3NzZ9.IVlz5zHv-VYZtbKYpCrNvxe56ObYpaAnW9AIwoevDA0",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiJpbUFkbWluIiwiVXNlclR5cGUiOjIsIlBsYXRmb3JtSUQiOjAsImV4cCI6MTc1MDc3NTMzMSwibmJmIjoxNzQyOTk5MjcxLCJpYXQiOjE3NDI5OTkzMzF9.iUQ6dyAevqzK-btJz48yLOhZk9PaEqoId2jjvmPoYlM",
       },
     }
   );

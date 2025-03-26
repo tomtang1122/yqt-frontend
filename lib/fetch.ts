@@ -34,7 +34,7 @@ async function fetchApi<T>(
   const queryParams = params
     ? `?${new URLSearchParams(params).toString()}`
     : "";
-  const fullUrl = `http://43.129.81.231:20009${url}${queryParams}`;
+  const fullUrl = `http://101.42.151.19:10009${url}${queryParams}`;
 
   // 构建请求头
   const requestHeaders: HeadersInit = {
