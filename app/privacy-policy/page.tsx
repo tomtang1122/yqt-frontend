@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "隐私政策",
 };
 
-export default async function PrivacyPolicy() {
+export default function PrivacyPolicy() {
   return (
     <div
       className="min-h-[var(--eq-article-height)]"

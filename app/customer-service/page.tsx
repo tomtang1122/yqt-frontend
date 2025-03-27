@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "客户服务",
 };
 
-export default async function CustomerService() {
+export default function CustomerService() {
   return (
     <div
       className="min-h-[var(--eq-article-height)]"

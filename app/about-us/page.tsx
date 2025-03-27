@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "关于我们",
 };
 
-export default async function AboutUs() {
+export default function AboutUs() {
   return (
     <div
       className="min-h-[var(--eq-article-height)]"
