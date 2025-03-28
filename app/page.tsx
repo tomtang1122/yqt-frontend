@@ -11,7 +11,7 @@ import homeBg from "@assets/home-bg.png";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "首页",
+  title: "云雀台 | 首页",
 };
 
 // export const dynamic = "force-dynamic";
