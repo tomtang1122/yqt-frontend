@@ -6,7 +6,6 @@ import AutoScroll from "embla-carousel-auto-scroll";
 import { Enterprise } from "@TS/enterprise";
 import cashback from "@assets/cashback.png";
 import Image from "next/image";
-import { getProxyImageUrl } from "@lib/utils";
 
 export function EnterpriseCarousel({
   enterprises,
@@ -107,18 +106,14 @@ export function EnterpriseCarousel({
                       {enterprise.logo && (
                         <Image
                           className="object-contain object-left"
-                          src={getProxyImageUrl(enterprise.logo)}
+                          src={enterprise.logo}
                           alt="企业 logo"
                           fill
                         />
                       )}
                     </div>
                     <div className="relative w-6 h-6 xl:w-8 xl:h-8">
-                      <Image
-                        src={cashback}
-                        alt="企业促销logo"
-                        fill
-                      />
+                      <Image src={cashback} alt="企业促销logo" fill />
                     </div>
                   </div>
                   <div className="text-[#E6A23C] text-base xl:text-xl mb-2 line-clamp-1">

@@ -4,7 +4,6 @@ import bankQR from "@assets/bank-QR.png";
 import localFont from "next/font/local";
 import { post } from "@lib/fetch";
 import { ClientConfigResponse } from "@TS/clientConfig";
-import { getProxyImageUrl } from "@lib/utils";
 
 const puHuiTi = localFont({
   src: "../public/font/AlibabaPuHuiTi-3-105-Heavy.woff2",
@@ -27,7 +26,7 @@ export default async function HeroBanner() {
     <div className="relative w-screen left-[50%] right-[50%] -mx-[50vw] h-[var(--ep-hero-height)]">
       {config?.mobileBanner && (
         <Image
-          src={getProxyImageUrl(config?.mobileBanner)}
+          src={config?.mobileBanner}
           alt="云雀台首页横幅|移动端"
           fill
           priority
@@ -36,7 +35,7 @@ export default async function HeroBanner() {
       )}
       {config?.pcBanner && (
         <Image
-          src={getProxyImageUrl(config?.pcBanner)}
+          src={config?.pcBanner}
           alt="云雀台首页横幅|PC端"
           fill
           priority

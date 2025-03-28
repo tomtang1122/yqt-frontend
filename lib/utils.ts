@@ -1,4 +1,4 @@
-const IM_REQUEST_URL = "http://101.42.151.19:10002";
+const IM_REQUEST_URL = "https://yunquetai.com/api";
 /**
  * 将原始图片URL转换为代理URL
  * 例如: ${host}/object/imAdmin/logo.png -> /api/proxy-image/object/imAdmin/logo.png

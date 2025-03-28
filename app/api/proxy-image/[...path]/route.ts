@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const IM_REQUEST_URL = "http://101.42.151.19:10002";
+const IM_REQUEST_URL = "https://yunquetai.com/api";
 
 async function proxyImage(url: string) {
   const response = await fetch(url);
