@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "云雀台 | 首页",
 };
 
-// export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export default async function Home() {
   const { data: { data } = {} } = await post<EnterpriseListResponse>(
