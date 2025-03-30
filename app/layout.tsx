@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import GlobalHeader from "@components/globalHeader";
 import GlobalFooter from "@components/globalFooter";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +23,9 @@ export default function RootLayout({
         <main>
           <GlobalHeader />
           {children}
-          <GlobalFooter />
+          <Suspense>
+            <GlobalFooter />
+          </Suspense>
         </main>
       </body>
     </html>
