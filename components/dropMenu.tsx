@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import menu from "@assets/menu.png";
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+import LinkWithParams from "@components/LinkWithParams";
 
 export default function GlobalHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,24 +42,24 @@ export default function GlobalHeader() {
             : "opacity-0 scale-95 translate-y-[-10px] pointer-events-none invisible"
         )}
       >
-        <Link
+        <LinkWithParams
           href="/about-us"
           className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)]"
         >
           关于我们
-        </Link>
-        <Link
+        </LinkWithParams>
+        <LinkWithParams
           href="/customer-service"
           className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)]"
         >
           客户服务
-        </Link>
-        <Link
+        </LinkWithParams>
+        <LinkWithParams
           href="/privacy-policy"
           className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)]"
         >
           隐私政策
-        </Link>
+        </LinkWithParams>
       </div>
     </div>
   );

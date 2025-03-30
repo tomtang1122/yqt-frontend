@@ -1,4 +1,4 @@
-import Link from "next/link";
+import LinkWithParams from "@components/LinkWithParams";
 import { Fragment } from "react";
 
 interface Breadcrumbs {
@@ -16,7 +16,9 @@ export default async function Breadcrumbs({ breadcrumbs }: Breadcrumbs) {
         <Fragment key={breadcrumb.name}>
           <div>
             {breadcrumb.href ? (
-              <Link href={breadcrumb.href}>{breadcrumb.name}</Link>
+              <LinkWithParams href={breadcrumb.href}>
+                {breadcrumb.name}
+              </LinkWithParams>
             ) : (
               <span className="text-[#8C8C8C]">{breadcrumb.name}</span>
             )}

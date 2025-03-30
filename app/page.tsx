@@ -15,7 +15,7 @@ type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export default async function Home(props: { searchParams: SearchParams }) {
   const searchParams = await props.searchParams;
-  const showDownload = searchParams?.download !== "false";
+  const showDownload = searchParams?.embedApp !== "true";
 
   const { data: { data } = {} } = await post<EnterpriseListResponse>(
     "/enterprise/query",
