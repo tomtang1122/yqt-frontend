@@ -25,7 +25,7 @@ export function EnterpriseCarousel({
     {
       align: "start",
       axis: "y",
-      // loop: true,
+      loop: true,
       dragFree: true,
     },
     [AutoScroll({ playOnInit: true, speed: 1, startDelay: 1500 })]
@@ -92,13 +92,13 @@ export function EnterpriseCarousel({
       className="overflow-hidden w-[1200px] mx-auto max-w-full"
       ref={emblaRef}
     >
-      <div className="flex flex-col gap-3 xl:gap-6 h-[var(--ep-carousel-height)] min-h-[200px]">
+      <div className="flex flex-col h-[var(--ep-carousel-height)] min-h-[200px]">
         {renderEnterprises.map((enterpriseArray, index) => (
-          <div key={index} className="flex flex-col gap-3 xl:gap-6 xl:flex-row">
+          <div key={index} className="flex flex-col xl:gap-6 xl:flex-row">
             {enterpriseArray.map((enterprise) => (
               <div
                 key={enterprise.enterpriseID}
-                className="p-0.5 w-full xl:w-[384px] rounded-lg bg-[radial-gradient(circle,_rgba(255,_255,_108,_1),_rgba(71,_108,_241,_1),_rgba(108,_255,_152,_1),_rgba(254,_120,_245,_1),_rgba(58,_140,_229,_1),_rgba(68,_244,_253,_1),_rgba(71,_109,_239,_1))] bg-clip-border"
+                className="p-0.5 w-full xl:w-[384px] rounded-lg bg-[radial-gradient(circle,_rgba(255,_255,_108,_1),_rgba(71,_108,_241,_1),_rgba(108,_255,_152,_1),_rgba(254,_120,_245,_1),_rgba(58,_140,_229,_1),_rgba(68,_244,_253,_1),_rgba(71,_109,_239,_1))] bg-clip-border mb-3 xl:mb-6"
               >
                 <div className="px-4 py-3 xl:px-5 xl:py-5 h-full overflow-hidden bg-white rounded-md bg-[linear-gradient(180deg,_#FFFBEF_0%,_#FFFFFF_100%)]">
                   <div className="flex items-center mb-2 xl:mb-4">
