@@ -16,7 +16,12 @@ export const metadata: Metadata = {
 
 export const revalidate = 3600;
 
-export default async function Home() {
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+export default async function Home(props: { searchParams: SearchParams }) {
+  const searchParams = await props.searchParams;
+  const showDownload = searchParams?.download !== "false";
+
   const { data: { data } = {} } = await post<EnterpriseListResponse>(
     "/enterprise/query",
     { pagination: { pageNumber: 1, showNumber: 1000000 } },
@@ -30,7 +35,7 @@ export default async function Home() {
 
   return (
     <div className="homepage">
-      <HeroBanner />
+      <HeroBanner showDownload={showDownload} />
       <div
         className="px-4 py-5 xl:pt-12 xl:pb-14"
         style={{

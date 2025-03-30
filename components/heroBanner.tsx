@@ -9,7 +9,11 @@ const puHuiTi = localFont({
   src: "../public/font/AlibabaPuHuiTi-3-105-Heavy.woff2",
 });
 
-export default async function HeroBanner() {
+export default async function HeroBanner({
+  showDownload,
+}: {
+  showDownload: boolean;
+}) {
   const { data: { data: { config } = {} } = {} } =
     await post<ClientConfigResponse>(
       "/client_config/get",
@@ -55,7 +59,7 @@ export default async function HeroBanner() {
             <br />
             全方位为您服务
           </h1>
-          {config?.appDownloadUrl && (
+          {config?.appDownloadUrl && showDownload && (
             <a
               href={config?.appDownloadUrl}
               className="bg-[#FDDB44] w-23 h-8 rounded-sm text-[#141414] flex flex-col items-center justify-center xl:w-35 xl:h-12.5"
