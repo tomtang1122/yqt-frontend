@@ -39,9 +39,15 @@ export default async function Home() {
           backgroundPosition: "center",
         }}
       >
-        <p className="h-[var(--ep-carousel-title-height)] flex items-center gap-2 justify-center text-center mb-4 xl:mb-8 text-sm xl:text-[20px] xl:leading-7.5 text-[##434343]">
+        <p className="h-[var(--ep-carousel-title-height)] leading-6 text-center mb-4 xl:mb-8 text-xs xl:text-[20px] xl:leading-7.5 text-[##434343]">
           <span>向带有</span>
-          <Image src={cashback} alt="企业促销logo" width={24} height={24} />
+          <Image
+            className="inline-block mx-2"
+            src={cashback}
+            alt="企业促销logo"
+            width={24}
+            height={24}
+          />
           <span>标识厂商采购将获得优惠券现金激励服务</span>
         </p>
         {data?.enterprises && (

@@ -60,9 +60,10 @@ export default function CustomerService() {
                 <span className="w-1.5 h-5 bg-[#007DFE] absolute left-[-18px] top-1"></span>
                 代理商激励服务
               </h2>
-              <div className="flex items-center gap-2">
+              <div className="leading-6 mb-1">
                 <span>是指用户向带有</span>
                 <Image
+                  className="inline-block mx-2"
                   src={cashback}
                   alt="企业促销logo"
                   width={24}
