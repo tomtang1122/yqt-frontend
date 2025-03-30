@@ -7,18 +7,16 @@ body {
   /* 20+16+20 */
   --ep-spacing: 56px;
   --ep-header-height: 44px;
-  --ep-hero-height: 120px;
-  --ep-carousel-title-height: 24px;
+  --ep-hero-height: 160px;
   --ep-footer-height: 48px;
-  --ep-carousel-height: calc(100dvh - var(--ep-header-height) - var(--ep-hero-height) - var(--ep-carousel-title-height) - var(--ep-footer-height) - var(--ep-spacing));
+  --ep-carousel-height: calc(100dvh - var(--ep-header-height) - var(--ep-hero-height) - var(--ep-footer-height) - var(--ep-spacing));
   --eq-article-height: calc(100dvh - var(--ep-header-height) - var(--ep-footer-height));
 
   @media (width >=80rem) {
     /* 48+56+32 */
     --ep-spacing: 136px;
     --ep-header-height: 64px;
-    --ep-hero-height: 240px;
-    --ep-carousel-title-height: 30px;
+    --ep-hero-height: 300px;
     --ep-footer-height: 60px;
   }
 }

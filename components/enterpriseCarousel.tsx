@@ -101,19 +101,26 @@ export function EnterpriseCarousel({
             {enterpriseArray.map((enterprise) => (
               <div
                 key={enterprise.enterpriseID}
-                className="p-0.5 w-full xl:w-[384px] rounded-lg bg-[radial-gradient(circle,_rgba(255,_255,_108,_1),_rgba(71,_108,_241,_1),_rgba(108,_255,_152,_1),_rgba(254,_120,_245,_1),_rgba(58,_140,_229,_1),_rgba(68,_244,_253,_1),_rgba(71,_109,_239,_1))] bg-clip-border mb-3 xl:mb-6"
+                className="select-none p-0.5 w-full xl:w-[384px] rounded-lg bg-[radial-gradient(circle,_rgba(255,_255,_108,_1),_rgba(71,_108,_241,_1),_rgba(108,_255,_152,_1),_rgba(254,_120,_245,_1),_rgba(58,_140,_229,_1),_rgba(68,_244,_253,_1),_rgba(71,_109,_239,_1))] bg-clip-border mb-3 xl:mb-6"
               >
                 <div className="px-4 py-3 xl:px-5 xl:py-5 h-full overflow-hidden bg-white rounded-md bg-[linear-gradient(180deg,_#FFFBEF_0%,_#FFFFFF_100%)]">
-                  <div className="flex items-center mb-2 xl:mb-4">
-                    <div className="flex-1 h-8 relative xl:h-12">
-                      {enterprise.logo && (
-                        <Image
-                          className="object-contain object-left"
-                          src={enterprise.logo}
-                          alt="企业 logo"
-                          fill
-                        />
-                      )}
+                  <div className="flex items-center justify-between mb-2 xl:mb-4">
+                    <div className="flex items-center gap-6">
+                      <div className="relative w-8 h-8 xl:h-12 xl:w-12">
+                        {enterprise.logo && (
+                          <Image
+                            className="object-contain object-left"
+                            src={enterprise.logo}
+                            alt="企业 logo"
+                            fill
+                          />
+                        )}
+                      </div>
+                      <div className="text-xs xl:text-sm text-[#434343] line-clamp-1">
+                        <a href={enterprise.website} target="_blank">
+                          {enterprise.website}
+                        </a>
+                      </div>
                     </div>
                     <div className="relative w-6 h-6 xl:w-8 xl:h-8">
                       <Image src={cashback} alt="企业促销logo" fill />
@@ -122,16 +129,11 @@ export function EnterpriseCarousel({
                   <div className="text-[#E6A23C] text-base xl:text-xl mb-2 line-clamp-1">
                     {enterprise.name}
                   </div>
-                  <div className="text-xs xl:text-sm text-[#434343] mb-3 xl:mb-6 line-clamp-1">
-                    <a href={enterprise.website} target="_blank">
-                      {enterprise.website}
-                    </a>
-                  </div>
                   <div className="flex gap-2">
                     {enterprise.tags?.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] xl:text-[12px] leading-[15px] xl:leading-4.5 py-0.5 px-1.5 text-[#8C8C8C] bg-[#F5F7FA] rounded-xs"
+                        className="text-[12px] xl:text-[14px] py-0.5 px-1.5 text-[#8C8C8C] bg-[#F5F7FA] rounded-xs"
                       >
                         {tag}
                       </span>

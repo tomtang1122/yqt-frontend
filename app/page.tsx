@@ -1,8 +1,6 @@
 import { EnterpriseCarousel } from "@components/enterpriseCarousel";
 import { EnterpriseListResponse } from "@TS/enterprise";
 import { post } from "@lib/fetch";
-import Image from "next/image";
-import cashback from "@assets/cashback.png";
 import HeroBanner from "@components/heroBanner";
 import homeBg from "@assets/home-bg.png";
 import { Metadata } from "next";
@@ -41,17 +39,6 @@ export default async function Home(props: { searchParams: SearchParams }) {
           backgroundPosition: "center",
         }}
       >
-        <p className="h-[var(--ep-carousel-title-height)] leading-6 text-center mb-4 xl:mb-8 text-xs xl:text-[20px] xl:leading-7.5 text-[##434343]">
-          <span>向带有</span>
-          <Image
-            className="inline-block mx-2"
-            src={cashback}
-            alt="企业促销logo"
-            width={24}
-            height={24}
-          />
-          <span>标识厂商采购将获得优惠券现金激励服务</span>
-        </p>
         {data?.enterprises && (
           <EnterpriseCarousel enterprises={data.enterprises} />
         )}
