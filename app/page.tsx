@@ -1,6 +1,3 @@
-// tode
-//1. 删除模拟增加的数据
-//2. 删除token的传输
 import { EnterpriseCarousel } from "@components/enterpriseCarousel";
 import { EnterpriseListResponse } from "@TS/enterprise";
 import { post } from "@lib/fetch";
