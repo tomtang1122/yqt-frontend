@@ -12,9 +12,16 @@ export function EnterpriseCarousel({
 }: {
   enterprises: Enterprise[];
 }) {
+  const tempEnterprises =
+    enterprises.length > 10
+      ? enterprises
+      : Array.from(
+          { length: enterprises.length * 2 },
+          (_, i) => enterprises[i % enterprises.length]
+        );
   const renderEnterprises = Array.from(
-    { length: Math.ceil(enterprises.length / 3) },
-    (_, i) => enterprises.slice(i * 3, i * 3 + 3)
+    { length: Math.ceil(tempEnterprises.length / 3) },
+    (_, i) => tempEnterprises.slice(i * 3, i * 3 + 3)
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
