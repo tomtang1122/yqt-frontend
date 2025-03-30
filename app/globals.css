@@ -16,7 +16,7 @@ body {
     /* 32+32 */
     --ep-spacing: 64px;
     --ep-header-height: 64px;
-    --ep-hero-height: 300px;
+    --ep-hero-height: 256px;
     --ep-footer-height: 60px;
   }
 }

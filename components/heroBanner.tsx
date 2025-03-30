@@ -47,30 +47,30 @@ export default async function HeroBanner({
           className="object-cover hidden xl:block"
         />
       )}
-      <div className="absolute top-0 left-0 w-full h-full pt-2 px-4 xl:px-[246px] xl:pt-6 flex justify-between">
+      <div className="absolute top-0 left-0 w-full h-full pt-2 px-4 xl:px-[120px] xl:pt-6 flex justify-between">
         <div className="h-fit">
           <h1
             className={clsx(
-              "text-2xl text-[#122C94] xl:text-6xl mb-2 xl:mb-6",
+              "text-2xl text-[#122C94] xl:text-5xl mb-2 xl:mb-4",
               puHuiTi.className
             )}
           >
-            365<span className="text-xs pr-3 xl:text-2xl">天</span>24
-            <span className="text-xs xl:text-2xl">小时</span>
+            365<span className="text-xs pr-3 xl:text-xl">天</span>24
+            <span className="text-xs xl:text-xl">小时</span>
             <br />
             全方位为您服务
           </h1>
           {config?.appFile && showDownload && (
             <a
               href={config?.appFile}
-              className="bg-[#FDDB44] w-23 h-8 rounded-sm text-[#141414] flex flex-col items-center justify-center xl:w-35 xl:h-12.5 mb-2 xl:mb-6"
+              className="bg-[#FDDB44] w-23 h-8 rounded-sm text-[#141414] flex flex-col items-center justify-center xl:w-35 xl:h-12.5 mb-2 xl:mb-4"
               download={`云雀台-v${config?.appVersion}.apk`}
             >
               <span className="text-xs font-bold xl:text-base">安卓版下载</span>
               <span className="text-[10px] xl:text-xs">Android DL</span>
             </a>
           )}
-          <p className="leading-6 text-center text-xs xl:text-[20px] xl:leading-7.5 text-[##434343] absolute left-4 xl:left-[246px]">
+          <p className="text-center text-xs xl:text-[18px] text-[##434343] absolute left-4 xl:left-[120px]">
             <span>向带有</span>
             <Image
               className="inline-block mx-2"
