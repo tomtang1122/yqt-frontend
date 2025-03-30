@@ -5,18 +5,18 @@ import LinkWithParams from "@components/LinkWithParams";
 
 export default function GlobalHeader() {
   return (
-    <div className="h-[var(--ep-header-height)] flex items-center justify-between px-4 xl:px-[246px] xl:justify-start text-[#141414] sticky top-0 bg-white z-1">
+    <div className="h-[var(--ep-header-height)] flex items-center justify-between pl-4 lg:pl-[120px] lg:justify-start text-[#141414] sticky top-0 bg-white z-1">
       <LinkWithParams
         href="/"
-        className="flex items-center gap-2 .5 font-bold text-lg xl:text-[32px]"
+        className="flex items-center gap-2 .5 font-bold text-lg lg:text-[32px]"
       >
-        <div className="w-8 h-8 relative xl:w-11.5 xl:h-11.5">
+        <div className="w-8 h-8 relative lg:w-11.5 lg:h-11.5">
           <Image src={logo} alt="云雀台logo" layout="fill" />
         </div>
         <span>云雀台</span>
       </LinkWithParams>
       <DropMenu />
-      <div className="hidden xl:flex items-center gap-6 ml-[200px]">
+      <div className="hidden lg:flex items-center gap-6 ml-[200px]">
         <LinkWithParams
           href="/about-us"
           className="block py-5 px-8 transition-all duration-200 hover:bg-[rgb(244,_244,_245)]"

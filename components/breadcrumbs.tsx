@@ -10,7 +10,7 @@ interface Breadcrumbs {
 
 export default async function Breadcrumbs({ breadcrumbs }: Breadcrumbs) {
   return (
-    <div className="p-4 flex items-center gap-1 text-[#141414] text-xs leading-4.5 max-w-[1200px] mx-auto xl:px-0 xl:text-sm xl:leading-5">
+    <div className="p-4 flex items-center gap-1 text-[#141414] text-xs leading-4.5 max-w-[1200px] mx-auto lg:px-0 lg:text-sm lg:leading-5">
       <div className="mr-1">当前位置:</div>
       {breadcrumbs.map((breadcrumb, index) => (
         <Fragment key={breadcrumb.name}>

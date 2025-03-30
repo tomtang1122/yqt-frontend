@@ -97,16 +97,16 @@ export function EnterpriseCarousel({
     >
       <div className="flex flex-col h-[var(--ep-carousel-height)] min-h-[200px]">
         {renderEnterprises.map((enterpriseArray, index) => (
-          <div key={index} className="flex flex-col xl:gap-6 xl:flex-row">
+          <div key={index} className="flex flex-col lg:gap-6 lg:flex-row">
             {enterpriseArray.map((enterprise) => (
               <div
                 key={enterprise.enterpriseID}
-                className="select-none p-0.5 w-full xl:w-[384px] rounded-lg bg-[radial-gradient(circle,_rgba(255,_255,_108,_1),_rgba(71,_108,_241,_1),_rgba(108,_255,_152,_1),_rgba(254,_120,_245,_1),_rgba(58,_140,_229,_1),_rgba(68,_244,_253,_1),_rgba(71,_109,_239,_1))] bg-clip-border mb-3 xl:mb-6"
+                className="select-none p-0.5 w-full lg:w-[384px] rounded-lg bg-[radial-gradient(circle,_rgba(255,_255,_108,_1),_rgba(71,_108,_241,_1),_rgba(108,_255,_152,_1),_rgba(254,_120,_245,_1),_rgba(58,_140,_229,_1),_rgba(68,_244,_253,_1),_rgba(71,_109,_239,_1))] bg-clip-border mb-3 lg:mb-6"
               >
-                <div className="px-4 py-3 xl:px-5 xl:py-5 h-full overflow-hidden bg-white rounded-md bg-[linear-gradient(180deg,_#FFFBEF_0%,_#FFFFFF_100%)]">
-                  <div className="flex items-center justify-between mb-2 xl:mb-4">
+                <div className="px-4 py-3 lg:px-5 lg:py-5 h-full overflow-hidden bg-white rounded-md bg-[linear-gradient(180deg,_#FFFBEF_0%,_#FFFFFF_100%)]">
+                  <div className="flex items-center justify-between mb-2 lg:mb-4">
                     <div className="flex items-center gap-6">
-                      <div className="relative w-8 h-8 xl:h-12 xl:w-12">
+                      <div className="relative w-8 h-8 lg:h-12 lg:w-12">
                         {enterprise.logo && (
                           <Image
                             className="object-contain object-left"
@@ -116,24 +116,24 @@ export function EnterpriseCarousel({
                           />
                         )}
                       </div>
-                      <div className="text-xs xl:text-sm text-[#434343] line-clamp-1">
+                      <div className="text-xs lg:text-sm text-[#434343] line-clamp-1">
                         <a href={enterprise.website} target="_blank">
                           {enterprise.website}
                         </a>
                       </div>
                     </div>
-                    <div className="relative w-6 h-6 xl:w-8 xl:h-8">
+                    <div className="relative w-6 h-6 lg:w-8 lg:h-8">
                       <Image src={cashback} alt="企业促销logo" fill />
                     </div>
                   </div>
-                  <div className="text-[#E6A23C] text-base xl:text-xl mb-2 line-clamp-1">
+                  <div className="text-[#E6A23C] text-base lg:text-xl mb-2 line-clamp-1">
                     {enterprise.name}
                   </div>
                   <div className="flex gap-2">
                     {enterprise.tags?.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[12px] xl:text-[14px] py-0.5 px-1.5 text-[#8C8C8C] bg-[#F5F7FA] rounded-xs"
+                        className="text-[12px] lg:text-[14px] py-0.5 px-1.5 text-[#8C8C8C] bg-[#F5F7FA] rounded-xs"
                       >
                         {tag}
                       </span>

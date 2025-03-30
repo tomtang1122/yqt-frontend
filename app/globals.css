@@ -12,7 +12,7 @@ body {
   --ep-carousel-height: calc(100dvh - var(--ep-header-height) - var(--ep-hero-height) - var(--ep-footer-height) - var(--ep-spacing));
   --eq-article-height: calc(100dvh - var(--ep-header-height) - var(--ep-footer-height));
 
-  @media (width >=80rem) {
+  @media (width >=64rem) {
     /* 32+32 */
     --ep-spacing: 64px;
     --ep-header-height: 64px;

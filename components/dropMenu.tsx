@@ -26,7 +26,7 @@ export default function GlobalHeader() {
   }, []);
 
   return (
-    <div className="relative h-6 block xl:hidden">
+    <div className="relative h-6 block lg:hidden">
       <button
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
