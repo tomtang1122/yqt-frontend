@@ -23,7 +23,7 @@ export default async function HeroBanner() {
     );
 
   return (
-    <div className="relative w-screen left-[50%] right-[50%] -mx-[50vw] h-[var(--ep-hero-height)]">
+    <div className="relative h-[var(--ep-hero-height)]">
       {config?.mobileBanner && (
         <Image
           src={config?.mobileBanner}
@@ -42,16 +42,16 @@ export default async function HeroBanner() {
           className="object-cover hidden xl:block"
         />
       )}
-      <div className="absolute top-0 left-0 w-full h-full pt-5 px-4 xl:pt-10 xl:px-[246px] flex justify-between">
-        <div>
+      <div className="absolute top-0 left-0 w-full h-full pt-2 px-4 xl:pt-6 xl:px-[246px] flex justify-between">
+        <div className="h-fit">
           <h1
             className={clsx(
-              "text-2xl text-[#122C94] mb-5.5 xl:text-7xl xl:mb-7",
+              "text-2xl text-[#122C94] xl:text-6xl mb-2 xl:mb-6",
               puHuiTi.className
             )}
           >
-            365<span className="text-xs pr-3 xl:text-3xl">天</span>24
-            <span className="text-xs xl:text-3xl">小时</span>
+            365<span className="text-xs pr-3 xl:text-2xl">天</span>24
+            <span className="text-xs xl:text-2xl">小时</span>
             <br />
             全方位为您服务
           </h1>
@@ -66,7 +66,7 @@ export default async function HeroBanner() {
             </a>
           )}
         </div>
-        <div className="relative w-[108px] h-[132px] xl:w-[234px] xl:h-[286px]">
+        <div className="relative w-[80px] h-[98px] xl:w-[160px] xl:h-[196px]">
           <Image fill src={bankQR} alt="招商银行二维码" />
         </div>
       </div>
