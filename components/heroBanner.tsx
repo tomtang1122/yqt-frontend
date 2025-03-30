@@ -59,11 +59,11 @@ export default async function HeroBanner({
             <br />
             全方位为您服务
           </h1>
-          {config?.appDownloadUrl && showDownload && (
+          {config?.appFile && showDownload && (
             <a
-              href={config?.appDownloadUrl}
+              href={config?.appFile}
               className="bg-[#FDDB44] w-23 h-8 rounded-sm text-[#141414] flex flex-col items-center justify-center xl:w-35 xl:h-12.5"
-              download="yunquetai.apk"
+              download={`云雀台-v${config?.appVersion}.apk`}
             >
               <span className="text-xs font-bold xl:text-base">安卓版下载</span>
               <span className="text-[10px] xl:text-xs">Android DL</span>
