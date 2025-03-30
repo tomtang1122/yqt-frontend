@@ -55,10 +55,16 @@ export default async function HeroBanner() {
             <br />
             全方位为您服务
           </h1>
-          <div className="bg-[#FDDB44] w-23 h-8 rounded-sm text-[#141414] flex flex-col items-center justify-center xl:w-35 xl:h-12.5">
-            <span className="text-xs font-bold xl:text-base">安卓版下载</span>
-            <span className="text-[10px] xl:text-xs">Android DL</span>
-          </div>
+          {config?.appDownloadUrl && (
+            <a
+              href={config?.appDownloadUrl}
+              className="bg-[#FDDB44] w-23 h-8 rounded-sm text-[#141414] flex flex-col items-center justify-center xl:w-35 xl:h-12.5"
+              download="yunquetai.apk"
+            >
+              <span className="text-xs font-bold xl:text-base">安卓版下载</span>
+              <span className="text-[10px] xl:text-xs">Android DL</span>
+            </a>
+          )}
         </div>
         <div className="relative w-[108px] h-[132px] xl:w-[234px] xl:h-[286px]">
           <Image fill src={bankQR} alt="招商银行二维码" />
