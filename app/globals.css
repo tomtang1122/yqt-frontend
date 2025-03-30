@@ -4,8 +4,8 @@ body {
   font-family: Microsoft YaHei, Microsoft YaHei;
   cursor: default;
 
-  /* 20+16+20 */
-  --ep-spacing: 56px;
+  /* 20+20 */
+  --ep-spacing: 40px;
   --ep-header-height: 44px;
   --ep-hero-height: 160px;
   --ep-footer-height: 48px;
@@ -13,8 +13,8 @@ body {
   --eq-article-height: calc(100dvh - var(--ep-header-height) - var(--ep-footer-height));
 
   @media (width >=80rem) {
-    /* 48+56+32 */
-    --ep-spacing: 136px;
+    /* 32+32 */
+    --ep-spacing: 64px;
     --ep-header-height: 64px;
     --ep-hero-height: 300px;
     --ep-footer-height: 60px;
