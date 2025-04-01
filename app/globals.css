@@ -13,8 +13,14 @@ body {
   --eq-article-height: calc(100dvh - var(--ep-header-height) - var(--ep-footer-height));
 
   @media (width >=64rem) {
-    /* 32+32 */
-    --ep-spacing: 64px;
+    --ep-header-height: 48px;
+    --ep-hero-height: 180px;
+    --ep-footer-height: 36px;
+  }
+
+  @media (width >=80rem) {
+    /* 28+28 */
+    --ep-spacing: 56px;
     --ep-header-height: 64px;
     --ep-hero-height: 256px;
     --ep-footer-height: 60px;
