@@ -9,12 +9,29 @@ export default function GlobalFooter() {
 
   return !isEmbedded ? (
     <div className="h-[var(--ep-footer-height)] bg-[#EBEEF5] text-[#434343] py-2 text-[10px] lg:text-sm flex flex-col gap-0.5 text-center items-center lg:flex-row lg:gap-2.5 justify-center">
-      <div>网站标识码: bm14000001京ICP备.5002860号</div>
+      <div>
+        备案号：
+        <a
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          粤ICP备2022110420号-1
+        </a>
+      </div>
       <div className="flex items-center gap-2.5 justify-center">
         <div className="w-3 h-3 relative lg:w-3.5 lg:h-3.5">
           <Image src={gov} alt="云雀台logo" layout="fill" />
         </div>
-        <div>京公网安备11010202000006号</div>
+        <div>
+          <a
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=44010602010881"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            粤公网安备44010602010881号
+          </a>
+        </div>
       </div>
     </div>
   ) : null;
