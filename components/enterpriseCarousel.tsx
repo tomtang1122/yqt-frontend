@@ -13,10 +13,10 @@ export function EnterpriseCarousel({
   enterprises: Enterprise[];
 }) {
   const tempEnterprises =
-    enterprises.length > 10
+    enterprises.length > 18
       ? enterprises
       : Array.from(
-          { length: enterprises.length * 2 },
+          { length: enterprises.length * 3 },
           (_, i) => enterprises[i % enterprises.length]
         );
   const renderEnterprises = Array.from(
