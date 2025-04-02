@@ -16,16 +16,7 @@ export default async function HeroBanner({
   showDownload: boolean;
 }) {
   const { data: { data: { config } = {} } = {} } =
-    await post<ClientConfigResponse>(
-      "/client_config/get",
-      {},
-      {
-        headers: {
-          token:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiJpbUFkbWluIiwiVXNlclR5cGUiOjIsIlBsYXRmb3JtSUQiOjAsImV4cCI6MTc1MDc3NTMzMSwibmJmIjoxNzQyOTk5MjcxLCJpYXQiOjE3NDI5OTkzMzF9.iUQ6dyAevqzK-btJz48yLOhZk9PaEqoId2jjvmPoYlM",
-        },
-      }
-    );
+    await post<ClientConfigResponse>("/client_config/get", {});
 
   return (
     <div className="relative h-[var(--ep-hero-height)]">

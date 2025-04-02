@@ -19,13 +19,7 @@ export default async function Home(props: { searchParams: SearchParams }) {
 
   const { data: { data } = {} } = await post<EnterpriseListResponse>(
     "/enterprise/query",
-    { pagination: { pageNumber: 1, showNumber: 1000000 } },
-    {
-      headers: {
-        token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiJpbUFkbWluIiwiVXNlclR5cGUiOjIsIlBsYXRmb3JtSUQiOjAsImV4cCI6MTc1MDc3NTMzMSwibmJmIjoxNzQyOTk5MjcxLCJpYXQiOjE3NDI5OTkzMzF9.iUQ6dyAevqzK-btJz48yLOhZk9PaEqoId2jjvmPoYlM",
-      },
-    }
+    { pagination: { pageNumber: 1, showNumber: 1000000 } }
   );
 
   return (
