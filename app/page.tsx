@@ -26,7 +26,7 @@ export default async function Home(props: { searchParams: SearchParams }) {
     <div className="homepage">
       <HeroBanner showDownload={showDownload} />
       <div
-        className="px-4 py-5 xl:py-7"
+        className="px-4 py-5"
         style={{
           backgroundImage: `url(${homeBg.src})`,
           backgroundSize: "cover",

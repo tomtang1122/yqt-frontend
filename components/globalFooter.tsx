@@ -8,7 +8,7 @@ export default function GlobalFooter() {
   const { isEmbedded } = useEmbedApp();
 
   return !isEmbedded ? (
-    <div className="h-[var(--ep-footer-height)] bg-[#EBEEF5] text-[#434343] py-2 text-[10px] lg:text-sm flex flex-col gap-0.5 text-center items-center lg:flex-row lg:gap-2.5 justify-center">
+    <div className="h-[var(--ep-footer-height)] bg-[#EBEEF5] text-[#434343] py-2 text-[10px] lg:text-xs flex flex-col gap-0.5 text-center items-center lg:flex-row lg:gap-2.5 justify-center">
       <div>
         备案号：
         <a
