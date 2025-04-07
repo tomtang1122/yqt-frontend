@@ -39,7 +39,7 @@ export default async function HeroBanner({
         />
       )}
       <div className="absolute top-0 left-0 w-full h-full pt-2 px-4 lg:px-[120px] lg:pt-3 flex justify-between">
-        <div className="h-fit">
+        <div>
           <h1
             className={clsx(
               "text-2xl text-[#122C94] lg:text-3xl mb-2 lg:mb-4",
@@ -64,7 +64,7 @@ export default async function HeroBanner({
           ) : (
             <div className="h-8 mb-2" />
           )}
-          <p className="text-center text-[10px] lg:text-xs text-[##434343] absolute left-4 lg:left-[120px]">
+          <p className="text-center text-[10px] lg:text-xs text-[##434343] absolute left-4 lg:left-[120px] bottom-1.5 lg:bottom-4">
             <span>向带有</span>
             <Image
               className="inline-block mx-1"
