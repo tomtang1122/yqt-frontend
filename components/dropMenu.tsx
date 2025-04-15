@@ -55,6 +55,12 @@ export default function GlobalHeader() {
           客户服务
         </LinkWithParams>
         <LinkWithParams
+          href="/user-agreement"
+          className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)]"
+        >
+          用户协议
+        </LinkWithParams>
+        <LinkWithParams
           href="/privacy-policy"
           className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)]"
         >
