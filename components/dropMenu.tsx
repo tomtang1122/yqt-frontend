@@ -44,25 +44,25 @@ export default function GlobalHeader() {
       >
         <LinkWithParams
           href="/about-us"
-          className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)]"
+          className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
         >
           关于我们
         </LinkWithParams>
         <LinkWithParams
           href="/customer-service"
-          className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)]"
+          className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
         >
           客户服务
         </LinkWithParams>
         <LinkWithParams
           href="/user-agreement"
-          className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)]"
+          className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
         >
           用户协议
         </LinkWithParams>
         <LinkWithParams
           href="/privacy-policy"
-          className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)]"
+          className="block py-3 px-6 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
         >
           隐私政策
         </LinkWithParams>
