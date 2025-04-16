@@ -19,3 +19,11 @@ export function getProxyImageUrl(url: string): string {
   // 如果不是IM服务器的URL，则返回原始URL
   return url;
 }
+
+export const copyToClipboard = (text: string) => {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).catch(() => {
+      console.log("copy failed");
+    });
+  }
+};

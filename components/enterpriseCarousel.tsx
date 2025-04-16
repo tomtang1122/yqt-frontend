@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, type TouchEventHandler } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { Enterprise } from "@TS/enterprise";
 import cashback from "@assets/cashback.png";
 import Image from "next/image";
+import { copyToClipboard } from "@lib/utils";
+import { toast } from "sonner";
 
 export function EnterpriseCarousel({
   enterprises,
@@ -24,6 +26,7 @@ export function EnterpriseCarousel({
     (_, i) => tempEnterprises.slice(i * 3, i * 3 + 3)
   );
 
+  const timerRef = useRef<number | null>(null);
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       align: "start",
@@ -90,6 +93,25 @@ export function EnterpriseCarousel({
     };
   }, [emblaApi]);
 
+  const handleTouchStart: TouchEventHandler<HTMLAnchorElement> = (e) => {
+    if (!(typeof window !== "undefined" && "ontouchstart" in window)) return;
+    const linkElement = e.currentTarget;
+    const linkUrl = linkElement?.dataset?.href;
+    if (linkElement && linkUrl) {
+      timerRef.current = window.setTimeout(() => {
+        copyToClipboard(linkUrl);
+        toast("复制成功");
+      }, 600);
+    }
+  };
+
+  const clearTimer = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+  };
+
   return (
     <div
       className="overflow-hidden w-[1200px] mx-auto max-w-full"
@@ -103,6 +125,10 @@ export function EnterpriseCarousel({
                 key={enterprise.enterpriseID}
                 className="block select-none p-0.5 w-full lg:w-[384px] rounded-lg bg-[radial-gradient(circle,_rgba(255,_255,_108,_1),_rgba(71,_108,_241,_1),_rgba(108,_255,_152,_1),_rgba(254,_120,_245,_1),_rgba(58,_140,_229,_1),_rgba(68,_244,_253,_1),_rgba(71,_109,_239,_1))] bg-clip-border mb-3 lg:mb-6"
                 href={enterprise.website}
+                data-href={enterprise.website}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={clearTimer}
+                onTouchMove={clearTimer}
               >
                 <div className="relative px-4 py-3 lg:px-5 lg:py-5 h-full overflow-hidden bg-white rounded-md bg-[linear-gradient(180deg,_#FFFBEF_0%,_#FFFFFF_100%)]">
                   <div className="h-8 lg:h-12 mb-2 lg:mb-4 flex items-center">
