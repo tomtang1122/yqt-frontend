@@ -42,6 +42,7 @@ export default function RootLayout({
               position: "fixed",
             },
           }}
+          duration={1200}
         />
       </body>
     </html>

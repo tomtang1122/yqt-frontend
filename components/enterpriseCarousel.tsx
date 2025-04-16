@@ -11,8 +11,10 @@ import { toast } from "sonner";
 
 export function EnterpriseCarousel({
   enterprises,
+  isEmbedApp,
 }: {
   enterprises: Enterprise[];
+  isEmbedApp: boolean;
 }) {
   const tempEnterprises =
     enterprises.length > 18
@@ -94,7 +96,11 @@ export function EnterpriseCarousel({
   }, [emblaApi]);
 
   const handleTouchStart: TouchEventHandler<HTMLAnchorElement> = (e) => {
-    if (!(typeof window !== "undefined" && "ontouchstart" in window)) return;
+    if (
+      !(typeof window !== "undefined" && "ontouchstart" in window) ||
+      !isEmbedApp
+    )
+      return;
     const linkElement = e.currentTarget;
     const linkUrl = linkElement?.dataset?.href;
     if (linkElement && linkUrl) {

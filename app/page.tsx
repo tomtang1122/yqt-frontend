@@ -16,6 +16,7 @@ type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 export default async function Home(props: { searchParams: SearchParams }) {
   const searchParams = await props.searchParams;
   const showDownload = searchParams?.embedApp !== "true";
+  const showPromptMessage = searchParams?.embedApp !== "true";
 
   const { data: { data } = {} } = await post<EnterpriseListResponse>(
     "/enterprise/query",
@@ -24,7 +25,10 @@ export default async function Home(props: { searchParams: SearchParams }) {
 
   return (
     <div className="homepage">
-      <HeroBanner showDownload={showDownload} />
+      <HeroBanner
+        showDownload={showDownload}
+        showPromptMessage={showPromptMessage}
+      />
       <div
         className="px-4 py-5"
         style={{
@@ -34,7 +38,10 @@ export default async function Home(props: { searchParams: SearchParams }) {
         }}
       >
         {data?.enterprises && (
-          <EnterpriseCarousel enterprises={data.enterprises} />
+          <EnterpriseCarousel
+            enterprises={data.enterprises}
+            isEmbedApp={searchParams?.embedApp === "true"}
+          />
         )}
       </div>
     </div>

@@ -12,8 +12,10 @@ const puHuiTi = localFont({
 
 export default async function HeroBanner({
   showDownload,
+  showPromptMessage,
 }: {
   showDownload: boolean;
+  showPromptMessage: boolean;
 }) {
   const { data: { data: { config } = {} } = {} } =
     await post<ClientConfigResponse>("/client_config/get", {});
@@ -64,17 +66,19 @@ export default async function HeroBanner({
           ) : (
             <div className="h-8 mb-2" />
           )}
-          <p className="text-center text-[10px] lg:text-xs text-[##434343] absolute left-4 lg:left-[120px] bottom-1.5 lg:bottom-4">
-            <span>向带有</span>
-            <Image
-              className="inline-block mx-1"
-              src={cashback}
-              alt="企业促销logo"
-              width={16}
-              height={16}
-            />
-            <span>标识厂商采购将获得优惠券现金激励服务</span>
-          </p>
+          {showPromptMessage && (
+            <p className="text-center text-[10px] lg:text-xs text-[##434343] absolute left-4 lg:left-[120px] bottom-1.5 lg:bottom-4 font-semibold">
+              <span>向带有</span>
+              <Image
+                className="inline-block mx-1"
+                src={cashback}
+                alt="企业促销logo"
+                width={16}
+                height={16}
+              />
+              <span>标识厂商采购将获得优惠券现金激励服务</span>
+            </p>
+          )}
         </div>
         <div className="relative w-[80px] h-[98px] lg:w-[120px] lg:h-[147px]">
           <Image fill src={bankQR} alt="招商银行二维码" />
