@@ -104,29 +104,15 @@ export function EnterpriseCarousel({
                 className="block select-none p-0.5 w-full lg:w-[384px] rounded-lg bg-[radial-gradient(circle,_rgba(255,_255,_108,_1),_rgba(71,_108,_241,_1),_rgba(108,_255,_152,_1),_rgba(254,_120,_245,_1),_rgba(58,_140,_229,_1),_rgba(68,_244,_253,_1),_rgba(71,_109,_239,_1))] bg-clip-border mb-3 lg:mb-6"
                 href={enterprise.website}
               >
-                <div className="px-4 py-3 lg:px-5 lg:py-5 h-full overflow-hidden bg-white rounded-md bg-[linear-gradient(180deg,_#FFFBEF_0%,_#FFFFFF_100%)]">
-                  <div className="flex items-center justify-between mb-2 lg:mb-4">
-                    <div>
-                      {enterprise.logo && (
-                        <Image
-                          className="w-auto h-8 lg:h-12"
-                          src={enterprise.logo}
-                          alt="企业 logo"
-                          width={48}
-                          height={48}
-                        />
-                      )}
-                    </div>
-                    {enterprise.isEligibleForCashback && (
-                      <div>
-                        <Image
-                          className="w-6 h-6 lg:w-8 lg:h-8"
-                          src={cashback}
-                          alt="企业促销logo"
-                          width={32}
-                          height={32}
-                        />
-                      </div>
+                <div className="relative px-4 py-3 lg:px-5 lg:py-5 h-full overflow-hidden bg-white rounded-md bg-[linear-gradient(180deg,_#FFFBEF_0%,_#FFFFFF_100%)]">
+                  <div className="h-8 lg:h-12 mb-2 lg:mb-4 flex items-center">
+                    {enterprise.logo && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        className="w-auto h-auto max-h-full"
+                        src={enterprise.logo}
+                        alt="企业 logo"
+                      />
                     )}
                   </div>
                   <div className="text-[#E6A23C] text-base lg:text-xl mb-2 line-clamp-1">
@@ -142,6 +128,17 @@ export function EnterpriseCarousel({
                       </span>
                     ))}
                   </div>
+                  {enterprise.isEligibleForCashback && (
+                    <div className="absolute top-1 right-1">
+                      <Image
+                        className="w-6 h-6 lg:w-8 lg:h-8"
+                        src={cashback}
+                        alt="企业促销logo"
+                        width={32}
+                        height={32}
+                      />
+                    </div>
+                  )}
                 </div>
               </a>
             ))}
