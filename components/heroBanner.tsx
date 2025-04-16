@@ -81,7 +81,6 @@ export default async function HeroBanner({
         </div>
         {config?.mobileBankQRCode && (
           <Image
-            fill
             width={80}
             height={98}
             src={config?.mobileBankQRCode}
@@ -90,7 +89,6 @@ export default async function HeroBanner({
         )}
         {config?.pcBankQRCode && (
           <Image
-            fill
             width={120}
             height={147}
             src={config?.pcBankQRCode}
