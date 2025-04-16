@@ -6,6 +6,7 @@ export type ClientConfigResponse = Response<{
     pcBanner?: string;
     appFile?: string;
     appVersion?: string;
-    bankQRCode?: string;
+    mobileBankQRCode?: string;
+    pcBankQRCode?: string;
   };
 }>;

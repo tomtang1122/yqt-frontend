@@ -79,10 +79,23 @@ export default async function HeroBanner({
             </p>
           )}
         </div>
-        {config?.bankQRCode && (
-          <div className="relative w-[80px] h-[98px] lg:w-[120px] lg:h-[147px]">
-            <Image fill src={config?.bankQRCode} alt="银行二维码" />
-          </div>
+        {config?.mobileBankQRCode && (
+          <Image
+            fill
+            width={80}
+            height={98}
+            src={config?.mobileBankQRCode}
+            alt="银行二维码"
+          />
+        )}
+        {config?.pcBankQRCode && (
+          <Image
+            fill
+            width={120}
+            height={147}
+            src={config?.pcBankQRCode}
+            alt="银行二维码"
+          />
         )}
       </div>
     </div>
