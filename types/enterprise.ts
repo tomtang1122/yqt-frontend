@@ -11,6 +11,8 @@ export interface Enterprise {
   isEligibleForCashback?: boolean;
   createTime?: number;
   enterpriseID?: string;
+  invoice?: string;
+  remark?: string;
 }
 
 export type EnterpriseListResponse = Response<{

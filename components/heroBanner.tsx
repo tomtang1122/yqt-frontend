@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import Image from "next/image";
-import bankQR from "@assets/bank-QR.png";
 import localFont from "next/font/local";
 import { post } from "@lib/fetch";
 import cashback from "@assets/cashback.png";
@@ -80,9 +79,11 @@ export default async function HeroBanner({
             </p>
           )}
         </div>
-        <div className="relative w-[80px] h-[98px] lg:w-[120px] lg:h-[147px]">
-          <Image fill src={bankQR} alt="招商银行二维码" />
-        </div>
+        {config?.bankQRCode && (
+          <div className="relative w-[80px] h-[98px] lg:w-[120px] lg:h-[147px]">
+            <Image fill src={config?.bankQRCode} alt="银行二维码" />
+          </div>
+        )}
       </div>
     </div>
   );
