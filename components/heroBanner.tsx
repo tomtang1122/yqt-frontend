@@ -80,20 +80,24 @@ export default async function HeroBanner({
           )}
         </div>
         {config?.mobileBankQRCode && (
-          <Image
-            width={80}
-            height={98}
-            src={config?.mobileBankQRCode}
-            alt="银行二维码"
-          />
+          <div className="lg:hidden">
+            <Image
+              width={80}
+              height={98}
+              src={config?.mobileBankQRCode}
+              alt="银行二维码"
+            />
+          </div>
         )}
         {config?.pcBankQRCode && (
-          <Image
-            width={120}
-            height={147}
-            src={config?.pcBankQRCode}
-            alt="银行二维码"
-          />
+          <div className="hidden lg:block">
+            <Image
+              width={120}
+              height={147}
+              src={config?.pcBankQRCode}
+              alt="银行二维码"
+            />
+          </div>
         )}
       </div>
     </div>
