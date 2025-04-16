@@ -1,13 +1,7 @@
-import clsx from "clsx";
 import Image from "next/image";
-import localFont from "next/font/local";
 import { post } from "@lib/fetch";
 import cashback from "@assets/cashback.png";
 import { ClientConfigResponse } from "@TS/clientConfig";
-
-const puHuiTi = localFont({
-  src: "../public/font/AlibabaPuHuiTi-3-105-Heavy.woff2",
-});
 
 export default async function HeroBanner({
   showDownload,
@@ -40,19 +34,7 @@ export default async function HeroBanner({
         />
       )}
       <div className="absolute top-0 left-0 w-full h-full pt-2 px-4 lg:px-[120px] lg:pt-3 flex justify-between">
-        <div>
-          <h1
-            className={clsx(
-              "text-2xl text-[#122C94] lg:text-3xl mb-2 lg:mb-4",
-              puHuiTi.className
-            )}
-          >
-            365<span className="text-xs pr-3 lg:text-base">天</span>
-            24
-            <span className="text-xs lg:text-base">小时</span>
-            <br />
-            全方位为您服务
-          </h1>
+        <div className="flex flex-col items-start justify-center">
           {config?.appFile && showDownload ? (
             <a
               href={config?.appFile}
