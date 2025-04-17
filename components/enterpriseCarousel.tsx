@@ -150,7 +150,7 @@ export function EnterpriseCarousel({
                   <div className="text-[#E6A23C] text-base lg:text-xl mb-2 line-clamp-1">
                     {enterprise.name}
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-wrap">
                     {enterprise.tags?.map((tag) => (
                       <span
                         key={tag}
