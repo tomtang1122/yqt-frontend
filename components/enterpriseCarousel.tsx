@@ -57,41 +57,9 @@ export function EnterpriseCarousel({
       }
     };
 
-    // 防止边缘拖动出现空白
-    // const preventEdgeScrolling = () => {
-    //   const {
-    //     limit,
-    //     target,
-    //     location,
-    //     offsetLocation,
-    //     scrollTo,
-    //     translate,
-    //     scrollBody,
-    //   } = emblaApi.internalEngine();
-
-    //   let edge: number | null = null;
-
-    //   if (limit.reachedMax(target.get())) edge = limit.max;
-    //   if (limit.reachedMin(target.get())) edge = limit.min;
-
-    //   if (edge !== null) {
-    //     offsetLocation.set(edge);
-    //     location.set(edge);
-    //     target.set(edge);
-    //     translate.to(edge);
-    //     translate.toggleActive(false);
-    //     scrollBody.useDuration(0).useFriction(0);
-    //     scrollTo.distance(0, false);
-    //   } else {
-    //     translate.toggleActive(true);
-    //   }
-    // };
-
     emblaApi.on("settle", handleScrollEnd);
-    // .on("scroll", preventEdgeScrolling);
     return () => {
       emblaApi.off("settle", handleScrollEnd);
-      // emblaApi.off("scroll", preventEdgeScrolling);
     };
   }, [emblaApi]);
 
