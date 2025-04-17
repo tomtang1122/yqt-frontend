@@ -136,6 +136,7 @@ export function EnterpriseCarousel({
                         alt="企业促销logo"
                         width={32}
                         height={32}
+                        sizes="(max-width: 1024px) 24px, 32px"
                       />
                     </div>
                   )}

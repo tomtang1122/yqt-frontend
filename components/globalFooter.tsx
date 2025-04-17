@@ -20,8 +20,15 @@ export default function GlobalFooter() {
         </a>
       </div>
       <div className="flex items-center gap-2.5 justify-center">
-        <div className="w-3 h-3 relative lg:w-3.5 lg:h-3.5">
-          <Image src={gov} alt="云雀台logo" layout="fill" />
+        <div>
+          <Image
+            className="w-3 h-3 lg:w-3.5 lg:h-3.5"
+            src={gov}
+            width={14}
+            height={14}
+            alt="政府公安图标"
+            sizes="(max-width: 1024px) 12px, 14px"
+          />
         </div>
         <div>
           <a

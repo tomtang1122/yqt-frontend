@@ -10,8 +10,15 @@ export default function GlobalHeader() {
         href="/"
         className="flex items-center gap-2.5 font-bold text-lg lg:text-xl"
       >
-        <div className="w-6 h-6 relative lg:h-8 lg:w-8">
-          <Image src={logo} alt="云雀台logo" layout="fill" />
+        <div>
+          <Image
+            className="w-6 h-6 lg:h-8 lg:w-8"
+            src={logo}
+            alt="云雀台logo"
+            width={32}
+            height={32}
+            sizes="(max-width: 1024px) 24px, 32px"
+          />
         </div>
         <span>云雀台</span>
       </LinkWithParams>
