@@ -91,7 +91,7 @@ export function EnterpriseCarousel({
       className="overflow-hidden w-[1200px] mx-auto max-w-full"
       ref={emblaRef}
     >
-      <div className="flex flex-col h-[var(--ep-carousel-height)] min-h-[200px]">
+      <div className="flex flex-col h-[var(--ep-carousel-height)] min-h-[200px] backface-hidden will-change-transform">
         {renderEnterprises.map((enterpriseArray, index) => (
           <div key={index} className="flex flex-col lg:gap-6 lg:flex-row">
             {enterpriseArray.map((enterprise) => (
