@@ -21,7 +21,7 @@ export default function AboutUs() {
         breadcrumbs={[{ name: "首页", href: "/" }, { name: "关于我们" }]}
       />
       <Article
-        title="关于我们"
+        title="关于我们 (About Us)"
         content={
           <div>
             中国，这片古老而充满活力的土地，正在以开放的胸怀、创新的动能和庞大的市场，向世界发出诚挚邀请，欢迎您来中国投资兴业，与我们共同书写合作共赢的新篇章
