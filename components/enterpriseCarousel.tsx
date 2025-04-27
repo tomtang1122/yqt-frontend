@@ -16,13 +16,10 @@ export function EnterpriseCarousel({
   enterprises: Enterprise[];
   isEmbedApp: boolean;
 }) {
-  const tempEnterprises =
-    enterprises.length > 18
-      ? enterprises
-      : Array.from(
-          { length: enterprises.length * 3 },
-          (_, i) => enterprises[i % enterprises.length]
-        );
+  const tempEnterprises = Array.from(
+    { length: enterprises.length * 3 },
+    (_, i) => enterprises[i % enterprises.length]
+  );
   const renderEnterprises = Array.from(
     { length: Math.ceil(tempEnterprises.length / 3) },
     (_, i) => tempEnterprises.slice(i * 3, i * 3 + 3)

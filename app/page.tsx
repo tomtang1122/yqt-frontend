@@ -3,11 +3,6 @@ import { EnterpriseListResponse } from "@TS/enterprise";
 import { post } from "@lib/fetch";
 import HeroBanner from "@components/heroBanner";
 import homeBg from "@assets/home-bg.png";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "云雀台 | 首页",
-};
 
 export const revalidate = 3600;
 
@@ -16,7 +11,6 @@ type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 export default async function Home(props: { searchParams: SearchParams }) {
   const searchParams = await props.searchParams;
   const showDownload = searchParams?.embedApp !== "true";
-  const showPromptMessage = searchParams?.embedApp !== "true";
 
   const { data: { data } = {} } = await post<EnterpriseListResponse>(
     "/enterprise/query",
@@ -25,10 +19,7 @@ export default async function Home(props: { searchParams: SearchParams }) {
 
   return (
     <div className="homepage">
-      <HeroBanner
-        showDownload={showDownload}
-        showPromptMessage={showPromptMessage}
-      />
+      <HeroBanner showDownload={showDownload} />
       <div
         className="px-4 py-5"
         style={{

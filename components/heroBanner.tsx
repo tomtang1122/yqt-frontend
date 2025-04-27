@@ -1,14 +1,11 @@
 import Image from "next/image";
 import { post } from "@lib/fetch";
-import cashback from "@assets/cashback.png";
 import { ClientConfigResponse } from "@TS/clientConfig";
 
 export default async function HeroBanner({
   showDownload,
-  showPromptMessage,
 }: {
   showDownload: boolean;
-  showPromptMessage: boolean;
 }) {
   const { data: { data: { config } = {} } = {} } =
     await post<ClientConfigResponse>("/client_config/get", {});
@@ -46,19 +43,6 @@ export default async function HeroBanner({
             </a>
           ) : (
             <div className="h-8 mb-2" />
-          )}
-          {showPromptMessage && (
-            <p className="text-center text-[10px] lg:text-xs text-[##434343] absolute left-4 lg:left-[120px] bottom-1.5 lg:bottom-4 font-semibold">
-              <span>向带有</span>
-              <Image
-                className="inline-block mx-1"
-                src={cashback}
-                alt="企业促销logo"
-                width={16}
-                height={16}
-              />
-              <span>标识厂商采购将获得优惠券现金激励服务</span>
-            </p>
           )}
         </div>
         {config?.mobileBankQRCode && (
