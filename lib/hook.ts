@@ -1,5 +1,5 @@
 import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const useEmbedApp = () => {
   const searchParams = useSearchParams();
@@ -18,3 +18,26 @@ export const useEmbedApp = () => {
     isEmbedded: embedAppSearchParams === "true",
   };
 };
+
+export const useIsMobile = (): boolean => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 992);
+    };
+
+    checkIsMobile();
+
+    window.addEventListener("resize", checkIsMobile);
+    return () => {
+      window.removeEventListener("resize", checkIsMobile);
+    };
+  }, []);
+
+  return isMobile;
+};
+
+export default useIsMobile;

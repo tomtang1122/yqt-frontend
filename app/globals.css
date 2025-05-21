@@ -18,3 +18,12 @@ body {
     --ep-footer-height: 36px;
   }
 }
+
+body .swiper-wrapper {
+  flex-direction: column;
+  transition-timing-function: linear !important;
+}
+
+body .swiper-slide {
+  height: auto;
+}
