@@ -5,7 +5,7 @@ import LinkWithParams from "@components/LinkWithParams";
 
 export default function GlobalHeader() {
   return (
-    <div className="h-[var(--ep-header-height)] flex items-center justify-between px-4 lg:pl-[120px] lg:justify-start text-[#141414] sticky top-0 bg-white z-1">
+    <div className="h-[var(--ep-header-height)] flex items-center justify-between px-4 lg:pl-[120px] lg:justify-start text-[#141414] sticky top-0 bg-white z-10">
       <LinkWithParams
         href="/"
         className="flex items-center gap-2.5 font-bold text-lg lg:text-xl"

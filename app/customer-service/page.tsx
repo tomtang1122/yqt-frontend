@@ -70,7 +70,7 @@ export default function CustomerService() {
                   alt="企业促销logo"
                 />
                 <span>
-                  标注的企业采购价格之外，用户再额外向平台或厂商申请优惠券额度返还的促进销售服务，业务流程如下：
+                  标注的企业采购价格之外，用户再额外向厂商申请优惠券额度或者银行贴息优惠券服务，业务流程如下：
                 </span>
               </div>
               1、采购人向厂商采购并支付相应货款
@@ -125,6 +125,8 @@ export default function CustomerService() {
               <br />
               5、优惠券有效期为发票开票日期之日开始计算 60 天内有效，超过 60
               天平台不支持兑换
+              <br />
+              6、本服务不构成要约，解释权归平台所有
               <br />
               <br />
             </div>
@@ -196,6 +198,19 @@ export default function CustomerService() {
               4、企业官网信息无法展示或联络失败
               <br />
               5、客户服务意识淡薄、产品质量以及售后保障体系低下，用户体验差
+              <br />
+              <br />
+            </div>
+            <div className="pl-4.5">
+              <h2 className="text-xl font-bold mb-4 relative">
+                <span className="w-1.5 h-5 bg-[#007DFE] absolute left-[-18px] top-1"></span>
+                联系我们
+              </h2>
+              官方微信：skylarkbaby
+              <br />
+              云雀台客户服务中心ID：10000
+              <br />
+              <br />
               <p className="text-right font-bold">云雀台服务中心</p>
             </div>
           </div>
