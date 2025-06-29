@@ -4,6 +4,7 @@ export interface Enterprise {
   logo?: string;
   name?: string;
   tags?: string[];
+  tagsTypes?: number[];
   website?: string;
   address?: string;
   phoneNumber?: string;
@@ -13,6 +14,7 @@ export interface Enterprise {
   enterpriseID?: string;
   invoice?: string;
   remark?: string;
+  contacts?: string[];
 }
 
 export type EnterpriseListResponse = Response<{
