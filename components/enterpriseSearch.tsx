@@ -1,63 +1,98 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 
+const searchIcon = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+    className="w-3.5 h-3.5 lg:w-4 lg:h-4"
+    aria-hidden="true"
+    role="img"
+  >
+    <path
+      fill="currentColor"
+      d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+    />
+  </svg>
+);
+
 export function EnterpriseSearch() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [isExpanded, setIsExpanded] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (searchTerm.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+    setIsExpanded(false);
+    const formData = new FormData(e.currentTarget);
+    const searchTerm = formData.get("search") as string;
+    if (searchTerm?.trim()) {
+      router.push(`/search?query=${encodeURIComponent(searchTerm.trim())}`);
     }
   };
 
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
+    if (!isExpanded) {
+      setTimeout(() => {
+        searchInputRef.current?.focus();
+      }, 300);
+    }
+  };
+
+  const closeSearch = () => {
+    setIsExpanded(false);
+  };
+
   return (
-    <form onSubmit={handleSearch} className="w-full max-w-md">
-      <div className="relative">
-        <input
-          type="text"
-          placeholder="搜索企业名称、标签、地址..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full px-4 py-2 pl-10 pr-12 text-sm bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500"
+    <div className="search-container ml-0 lg:ml-6">
+      <button
+        type="button"
+        onClick={toggleExpanded}
+        className="w-6 lg:w-8 h-6 lg:h-8 flex items-center justify-center cursor-pointer bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-all duration-300"
+        aria-label={isExpanded ? "关闭搜索" : "打开搜索"}
+        aria-expanded={isExpanded}
+        aria-controls="search-form"
+      >
+        {searchIcon}
+      </button>
+
+      {isExpanded && (
+        <div
+          className="fixed inset-0 bg-opacity-20 backdrop-blur-sm z-40 transition-all"
+          onClick={closeSearch}
+          aria-hidden="true"
         />
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <svg
-            className="h-4 w-4 text-gray-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
+      )}
+
+      <form
+        id="search-form"
+        onSubmit={handleSearch}
+        className={`fixed max-w-[800px] top-[var(--ep-header-height)] transition-all duration-300 ease-in-out z-50 left-0 right-0 mx-auto ${
+          isExpanded ? "h-10 lg:h-14 opacity-100" : "h-0 opacity-0"
+        }`}
+        role="search"
+      >
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center text-gray-500 pointer-events-none">
+          {searchIcon}
         </div>
-        <button
-          type="submit"
-          className="absolute inset-y-0 right-0 pr-3 flex items-center text-blue-600 hover:text-blue-800"
-        >
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
+        <label htmlFor="search-input" className="sr-only">
+          搜索品牌
+        </label>
+        <input
+          ref={searchInputRef}
+          id="search-input"
+          name="search"
+          type="search"
+          placeholder="品牌搜索..."
+          className="w-full h-full py-2 pl-14 pr-3 text-sm placeholder-gray-600 focus:outline-none border-2 border-gray-300 focus:border-blue-500 rounded-4xl bg-white"
+        />
+        <button type="submit" className="sr-only">
+          搜索
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
-} 
+}

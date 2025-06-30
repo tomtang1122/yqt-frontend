@@ -2,6 +2,7 @@ import Image from "next/image";
 import logo from "@assets/logo.png";
 import DropMenu from "@components/dropMenu";
 import LinkWithParams from "@components/LinkWithParams";
+import { EnterpriseSearch } from "./enterpriseSearch";
 
 export default function GlobalHeader() {
   return (
@@ -22,6 +23,7 @@ export default function GlobalHeader() {
         </div>
         <span>云雀台</span>
       </LinkWithParams>
+      <EnterpriseSearch />
       <DropMenu />
       <div className="hidden lg:flex items-center gap-6 ml-[200px]">
         <LinkWithParams

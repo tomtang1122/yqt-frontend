@@ -1,10 +1,8 @@
 "use client";
 
-import { useRef, useEffect, type TouchEventHandler } from "react";
+import { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Enterprise } from "@TS/enterprise";
-import { copyToClipboard } from "@lib/utils";
-import { toast } from "sonner";
 import type { Swiper as SwiperType } from "swiper/types";
 import { useIsMobile } from "@lib/hook";
 import { EnterpriseCard } from "./enterpriseCard";
@@ -15,10 +13,8 @@ const AUTO_SPEED = 3000;
 
 export function EnterpriseCarousel({
   enterprises,
-  isEmbedApp,
 }: {
   enterprises: Enterprise[];
-  isEmbedApp: boolean;
 }) {
   const tempEnterprises = Array.from(
     { length: enterprises.length * 3 },
@@ -33,29 +29,6 @@ export function EnterpriseCarousel({
   const timerRef = useRef<number | null>(null);
   const autoScrollTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
-
-  const handleTouchStart: TouchEventHandler<HTMLAnchorElement> = (e) => {
-    if (
-      !(typeof window !== "undefined" && "ontouchstart" in window) ||
-      !isEmbedApp
-    )
-      return;
-    const linkElement = e.currentTarget;
-    const linkUrl = linkElement?.dataset?.href;
-    if (linkElement && linkUrl) {
-      timerRef.current = window.setTimeout(() => {
-        copyToClipboard(linkUrl);
-        toast("复制成功");
-      }, 600);
-    }
-  };
-
-  const clearTimer = () => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-      timerRef.current = null;
-    }
-  };
 
   const handleSwiperInit = (swiper: SwiperType) => {
     swiperRef.current = swiper;
@@ -120,11 +93,7 @@ export function EnterpriseCarousel({
         {isMobile
           ? enterprises.map((enterprise, index) => (
               <SwiperSlide key={index}>
-                <EnterpriseCard
-                  enterprise={enterprise}
-                  handleTouchStart={handleTouchStart}
-                  clearTimer={clearTimer}
-                />
+                <EnterpriseCard enterprise={enterprise} />
               </SwiperSlide>
             ))
           : renderEnterprises.map((enterpriseArray, index) => (
@@ -134,8 +103,6 @@ export function EnterpriseCarousel({
                     <EnterpriseCard
                       key={enterprise.enterpriseID}
                       enterprise={enterprise}
-                      handleTouchStart={handleTouchStart}
-                      clearTimer={clearTimer}
                     />
                   ))}
                 </div>

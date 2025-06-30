@@ -12,10 +12,10 @@ export default async function Home(props: { searchParams: SearchParams }) {
   const searchParams = await props.searchParams;
   const showDownload = searchParams?.embedApp !== "true";
 
-  const { data: { data } = {} } = await post<EnterpriseListResponse>(
-    "/enterprise/query",
-    { pagination: { pageNumber: 1, showNumber: 1000000 } }
-  );
+  const { data: { data: { enterprises = [] } = {} } = {} } =
+    await post<EnterpriseListResponse>("/enterprise/query", {
+      pagination: { pageNumber: 1, showNumber: 1000000 },
+    });
 
   return (
     <div className="homepage">
@@ -28,11 +28,8 @@ export default async function Home(props: { searchParams: SearchParams }) {
           backgroundPosition: "center",
         }}
       >
-        {data?.enterprises && (
-          <EnterpriseCarousel
-            enterprises={data.enterprises}
-            isEmbedApp={searchParams?.embedApp === "true"}
-          />
+        {enterprises.length > 0 && (
+          <EnterpriseCarousel enterprises={enterprises} />
         )}
       </div>
     </div>

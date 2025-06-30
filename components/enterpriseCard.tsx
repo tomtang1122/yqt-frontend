@@ -1,22 +1,46 @@
 "use client";
 
 import clsx from "clsx";
-import type { TouchEventHandler } from "react";
+import { useRef, type TouchEventHandler } from "react";
 import cashback from "@assets/cashback.png";
 import Image from "next/image";
 import { Enterprise } from "@TS/enterprise";
+import { useSearchParams } from "next/navigation";
+import { copyToClipboard } from "@lib/utils";
+import { toast } from "sonner";
 
 interface EnterpriseCardProps {
   enterprise: Enterprise;
-  handleTouchStart: TouchEventHandler<HTMLAnchorElement>;
-  clearTimer: () => void;
 }
 
-export function EnterpriseCard({
-  enterprise,
-  handleTouchStart,
-  clearTimer,
-}: EnterpriseCardProps) {
+export function EnterpriseCard({ enterprise }: EnterpriseCardProps) {
+  const timerRef = useRef<number | null>(null);
+  const searchParams = useSearchParams();
+  const isEmbedApp = searchParams.get("embedApp") === "true";
+
+  const handleTouchStart: TouchEventHandler<HTMLAnchorElement> = (e) => {
+    if (
+      !(typeof window !== "undefined" && "ontouchstart" in window) ||
+      !isEmbedApp
+    )
+      return;
+    const linkElement = e.currentTarget;
+    const linkUrl = linkElement?.dataset?.href;
+    if (linkElement && linkUrl) {
+      timerRef.current = window.setTimeout(() => {
+        copyToClipboard(linkUrl);
+        toast("复制成功");
+      }, 600);
+    }
+  };
+
+  const clearTimer = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+  };
+
   return (
     <a
       className="block select-none p-0.5 w-full lg:w-[384px] rounded-lg bg-[radial-gradient(circle,_rgba(255,_255,_108,_1),_rgba(71,_108,_241,_1),_rgba(108,_255,_152,_1),_rgba(254,_120,_245,_1),_rgba(58,_140,_229,_1),_rgba(68,_244,_253,_1),_rgba(71,_109,_239,_1))] bg-clip-border mb-3 lg:mb-6"
