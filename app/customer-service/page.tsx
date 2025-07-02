@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export default function CustomerService() {
   return (
     <div
-      className="min-h-[var(--eq-article-height)]"
       style={{
         backgroundImage: `url(${homeBg.src})`,
         backgroundSize: "cover",
@@ -77,46 +76,48 @@ export default function CustomerService() {
               <br />
               2、采购人注册云雀台并向云雀台服务中心提交以下示例业务订单信息：
               <table className="my-3">
-                <tr className="text-center">
-                  <td className="border-t border-l border-gray-300 p-2">
-                    合同编号
-                  </td>
-                  <td className="border-t border-l border-r border-gray-300 p-2">
-                    xxxxxxxxxx
-                  </td>
-                </tr>
-                <tr className="text-center">
-                  <td className="border-t border-l border-gray-300 p-2">
-                    发票总额
-                  </td>
-                  <td className="border-t border-l border-r border-gray-300 p-2">
-                    xxx.xx万
-                  </td>
-                </tr>
-                <tr className="text-center">
-                  <td className="border-t border-l border-gray-300 p-2">
-                    发票日期
-                  </td>
-                  <td className="border-t border-l border-r border-gray-300 p-2">
-                    xxxx年xx月xx日
-                  </td>
-                </tr>
-                <tr className="text-center">
-                  <td className="border-t border-l border-gray-300 p-2">
-                    客户名称
-                  </td>
-                  <td className="border-t border-l border-r border-gray-300 p-2">
-                    xxx公司
-                  </td>
-                </tr>
-                <tr className="text-center">
-                  <td className="border-t border-l border-b border-gray-300 p-2">
-                    客户银行账户
-                  </td>
-                  <td className="border-t border-l border-b border-r border-gray-300 p-2">
-                    xx银行 xxxxxxxxxxxxxx
-                  </td>
-                </tr>
+                <tbody>
+                  <tr className="text-center">
+                    <td className="border-t border-l border-gray-300 p-2">
+                      合同编号
+                    </td>
+                    <td className="border-t border-l border-r border-gray-300 p-2">
+                      xxxxxxxxxx
+                    </td>
+                  </tr>
+                  <tr className="text-center">
+                    <td className="border-t border-l border-gray-300 p-2">
+                      发票总额
+                    </td>
+                    <td className="border-t border-l border-r border-gray-300 p-2">
+                      xxx.xx万
+                    </td>
+                  </tr>
+                  <tr className="text-center">
+                    <td className="border-t border-l border-gray-300 p-2">
+                      发票日期
+                    </td>
+                    <td className="border-t border-l border-r border-gray-300 p-2">
+                      xxxx年xx月xx日
+                    </td>
+                  </tr>
+                  <tr className="text-center">
+                    <td className="border-t border-l border-gray-300 p-2">
+                      客户名称
+                    </td>
+                    <td className="border-t border-l border-r border-gray-300 p-2">
+                      xxx公司
+                    </td>
+                  </tr>
+                  <tr className="text-center">
+                    <td className="border-t border-l border-b border-gray-300 p-2">
+                      客户银行账户
+                    </td>
+                    <td className="border-t border-l border-b border-r border-gray-300 p-2">
+                      xx银行 xxxxxxxxxxxxxx
+                    </td>
+                  </tr>
+                </tbody>
               </table>
               3、平台向厂商确认交易订单信息，并与厂商核算优惠券额度，向厂商申请支付优惠券额度至平台账户
               <br />

@@ -87,7 +87,7 @@ export function EnterpriseSearch() {
           name="search"
           type="search"
           placeholder="品牌搜索..."
-          className="w-full h-full py-2 pl-14 pr-3 text-sm placeholder-gray-600 focus:outline-none border-2 border-gray-300 focus:border-blue-500 rounded-4xl bg-white"
+          className="w-full h-full py-2 pl-14 pr-4 text-sm placeholder-gray-600 focus:outline-none border-2 border-gray-300 focus:border-blue-500 rounded-4xl bg-white"
         />
         <button type="submit" className="sr-only">
           搜索

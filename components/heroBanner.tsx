@@ -11,7 +11,7 @@ export default async function HeroBanner({
     await post<ClientConfigResponse>("/client_config/get", {});
 
   return (
-    <div className="relative h-[var(--ep-hero-height)]">
+    <div className="relative h-[180px] lg:h-[360px]">
       {config?.mobileBanner && (
         <Image
           src={config?.mobileBanner}
@@ -30,7 +30,7 @@ export default async function HeroBanner({
           className="object-cover hidden lg:block"
         />
       )}
-      <div className="absolute top-0 left-0 w-full h-full pt-2 px-4 lg:px-[120px] lg:pt-3 flex justify-between">
+      <div className="absolute top-0 left-0 w-full h-full pb-3 px-4 lg:px-[120px] lg:pb-8 flex justify-between items-end">
         <div className="flex flex-col items-start justify-center">
           {config?.appFile && showDownload ? (
             <a
@@ -48,8 +48,8 @@ export default async function HeroBanner({
         {config?.mobileBankQRCode && (
           <div className="lg:hidden">
             <Image
-              width={80}
-              height={98}
+              width={90}
+              height={110.25}
               src={config?.mobileBankQRCode}
               alt="银行二维码"
             />
@@ -58,8 +58,8 @@ export default async function HeroBanner({
         {config?.pcBankQRCode && (
           <div className="hidden lg:block">
             <Image
-              width={120}
-              height={147}
+              width={180}
+              height={220.5}
               src={config?.pcBankQRCode}
               alt="银行二维码"
             />

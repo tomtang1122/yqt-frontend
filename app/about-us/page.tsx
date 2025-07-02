@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 export default function AboutUs() {
   return (
     <div
-      className="min-h-[var(--eq-article-height)]"
       style={{
         backgroundImage: `url(${homeBg.src})`,
         backgroundSize: "cover",
@@ -28,7 +27,7 @@ export default function AboutUs() {
             <br />
             <br />
             中国作为世界最大经济体之一，信息化科技产业也在不断蓬勃发展，成功应用在：教育
-            通讯 交通 电力 环保
+            通讯 交通 电力 环保 医疗 农业 
             公共安全等领域，云雀台致力于向公众以及全球展示中国科技企业的科技成果，产品与服务，同时为全球用户提供全天候商务通讯服务，并通过我们的合作银行，保险等机构确保贸易安全与资金融通。欢迎全球企业访问我们的企业官网与商务联络，无论您在全球何处，欢迎您通过云雀台官网或APP与企业联系，同时为您提供365
             x24H服务，热诚欢迎您的访问！
             <div className="border-[#EBEEF5] border-b-2 mt-2" />

@@ -4,18 +4,10 @@ body {
   font-family: Microsoft YaHei, Microsoft YaHei;
   cursor: default;
 
-  /* 20+20 */
-  --ep-spacing: 40px;
   --ep-header-height: 36px;
-  --ep-hero-height: 144px;
-  --ep-footer-height: 48px;
-  --ep-carousel-height: calc(100dvh - var(--ep-header-height) - var(--ep-hero-height) - var(--ep-footer-height) - var(--ep-spacing));
-  --eq-article-height: calc(100dvh - var(--ep-header-height) - var(--ep-footer-height));
 
   @media (width >=64rem) {
     --ep-header-height: 48px;
-    --ep-hero-height: 180px;
-    --ep-footer-height: 36px;
   }
 }
 
@@ -26,4 +18,9 @@ body .swiper-wrapper {
 
 body .swiper-slide {
   height: auto;
+  margin-bottom: 12px;
+
+  @media (width >=64rem) {
+    margin-bottom: 24px;
+  }
 }

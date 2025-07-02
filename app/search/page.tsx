@@ -19,35 +19,20 @@ export default async function SearchPage(props: {
     });
 
   return (
-    <div className="">
+    <div className="search-page">
       <HeroBanner showDownload={showDownload} />
       <div className="px-4 py-5">
-        <div className="h-[var(--ep-carousel-height)]">
-          <h1 className="w-[1200px] max-w-full text-2xl font-bold mb-8 mx-auto">
-            搜索结果
-          </h1>
-          <div className="flex flex-col w-[800px] max-w-full mx-auto overflow-auto gap-8">
-            {enterprises.map((enterprise) => (
-              <div
-                key={enterprise.enterpriseID}
-                className="flex flex-col lg:flex-row gap-0 lg:gap-6"
-              >
-                <EnterpriseCard enterprise={enterprise} />
-                {enterprise.contacts && enterprise.contacts.length > 0 && (
-                  <div>
-                    <h2 className="text-xl font-bold mb-2">企业联系人ID:</h2>
-                    <ul className="pl-4">
-                      {enterprise.contacts.map((contact) => (
-                        <li key={contact} className="text-gray-500">
-                          {contact}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+        <h1 className="w-[1200px] max-w-full text-2xl font-bold mt-6 lg:mt-10 mb-12 lg:mb-20 mx-auto">
+          搜索结果
+        </h1>
+        <div className="flex flex-col w-[800px] max-w-full min-h-[60dvh] mx-auto overflow-auto gap-8">
+          {enterprises.map((enterprise) => (
+            <EnterpriseCard
+              key={enterprise.enterpriseID}
+              enterprise={enterprise}
+              hasContacts
+            />
+          ))}
         </div>
       </div>
     </div>

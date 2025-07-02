@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 export default function PrivacyPolicy() {
   return (
     <div
-      className="min-h-[var(--eq-article-height)]"
       style={{
         backgroundImage: `url(${homeBg.src})`,
         backgroundSize: "cover",

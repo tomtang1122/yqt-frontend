@@ -6,7 +6,7 @@ import { EnterpriseSearch } from "./enterpriseSearch";
 
 export default function GlobalHeader() {
   return (
-    <div className="h-[var(--ep-header-height)] flex items-center justify-between px-4 lg:pl-[120px] lg:justify-start text-[#141414] sticky top-0 bg-white z-10">
+    <div className="h-[var(--ep-header-height)] flex items-center justify-between px-4 lg:px-[120px] text-[#141414] sticky top-0 bg-white z-10">
       <LinkWithParams
         href="/"
         className="flex items-center gap-2.5 font-bold text-lg lg:text-xl"
@@ -18,38 +18,39 @@ export default function GlobalHeader() {
             alt="云雀台logo"
             width={32}
             height={32}
-            sizes="(max-width: 1024px) 24px, 32px"
           />
         </div>
         <span>云雀台</span>
       </LinkWithParams>
-      <EnterpriseSearch />
-      <DropMenu />
-      <div className="hidden lg:flex items-center gap-6 ml-[200px]">
-        <LinkWithParams
-          href="/about-us"
-          className="block py-3 px-8 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
-        >
-          关于我们
-        </LinkWithParams>
-        <LinkWithParams
-          href="/customer-service"
-          className="block py-3 px-8 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
-        >
-          客户服务
-        </LinkWithParams>
-        <LinkWithParams
-          href="/user-agreement"
-          className="block py-3 px-8 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
-        >
-          用户协议
-        </LinkWithParams>
-        <LinkWithParams
-          href="/privacy-policy"
-          className="block py-3 px-8 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
-        >
-          隐私政策
-        </LinkWithParams>
+      <div className="flex items-center gap-3 lg:gap-6">
+        <EnterpriseSearch />
+        <DropMenu />
+        <div className="hidden lg:flex items-center gap-6">
+          <LinkWithParams
+            href="/about-us"
+            className="block py-3 px-8 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
+          >
+            关于我们
+          </LinkWithParams>
+          <LinkWithParams
+            href="/customer-service"
+            className="block py-3 px-8 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
+          >
+            客户服务
+          </LinkWithParams>
+          <LinkWithParams
+            href="/user-agreement"
+            className="block py-3 px-8 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
+          >
+            用户协议
+          </LinkWithParams>
+          <LinkWithParams
+            href="/privacy-policy"
+            className="block py-3 px-8 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold"
+          >
+            隐私政策
+          </LinkWithParams>
+        </div>
       </div>
     </div>
   );
