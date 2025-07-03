@@ -26,7 +26,7 @@ export default async function SearchPage(props: {
           搜索结果
         </h1>
         <div className="flex flex-col w-[800px] max-w-full min-h-[60dvh] mx-auto overflow-auto gap-8">
-          {enterprises.map((enterprise) => (
+          {enterprises?.map((enterprise) => (
             <EnterpriseCard
               key={enterprise.enterpriseID}
               enterprise={enterprise}

@@ -18,9 +18,16 @@ body .swiper-wrapper {
 
 body .swiper-slide {
   height: auto;
-  margin-bottom: 12px;
 
-  @media (width >=64rem) {
-    margin-bottom: 24px;
+  &>* {
+    margin-bottom: 12px;
+
+    @media (width >=64rem) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &:last-child>* {
+    margin-bottom: 0 !important;
   }
 }

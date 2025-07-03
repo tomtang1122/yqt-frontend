@@ -84,17 +84,11 @@ export function EnterpriseCarousel({
     <div className="overflow-hidden w-[1200px] mx-auto max-w-full">
       <Swiper
         slidesPerView="auto"
-        spaceBetween={12}
         direction={"vertical"}
         loop={true}
         loopAdditionalSlides={5} // 循环轮播图的额外数量，避免幻灯片切换时，瞬移。如果还是瞬移，需要继续增大此数值
         className="h-[640px] lg:h-[820px] min-h-[200px] continuous-scroll"
         onSwiper={handleSwiperInit}
-        breakpoints={{
-          1024: {
-            spaceBetween: 24,
-          },
-        }}
       >
         {isMobile
           ? enterprises.map((enterprise, index) => (
