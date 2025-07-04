@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { useRouter } from "next/navigation";
 import { useRouterWithParams } from "@lib/hook";
 
 const searchIcon = (
@@ -52,7 +51,7 @@ export function EnterpriseSearch() {
       <button
         type="button"
         onClick={toggleExpanded}
-        className="w-6 lg:w-8 h-6 lg:h-8 flex items-center justify-center cursor-pointer bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-all duration-300"
+        className="w-6 lg:w-8 h-6 lg:h-8 flex items-center justify-center cursor-pointer bg-[#1A73E8] hover:bg-[#1765cc] text-white rounded-full transition-all duration-300"
         aria-label={isExpanded ? "关闭搜索" : "打开搜索"}
         aria-expanded={isExpanded}
         aria-controls="search-form"
@@ -62,7 +61,7 @@ export function EnterpriseSearch() {
 
       {isExpanded && (
         <div
-          className="fixed inset-0 bg-opacity-20 backdrop-blur-sm z-40 transition-all"
+          className="fixed inset-0 backdrop-blur-sm z-40 transition-all"
           onClick={closeSearch}
           aria-hidden="true"
         />
@@ -76,7 +75,7 @@ export function EnterpriseSearch() {
         }`}
         role="search"
       >
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center text-gray-500 pointer-events-none">
+        <div className="absolute left-4 top-1/2 translate-y-[-50%] w-6 h-6 flex items-center justify-center text-[#6a7282] pointer-events-none">
           {searchIcon}
         </div>
         <label htmlFor="search-input" className="sr-only">
@@ -88,7 +87,7 @@ export function EnterpriseSearch() {
           name="search"
           type="search"
           placeholder="品牌搜索..."
-          className="w-full h-full py-2 pl-14 pr-4 text-sm placeholder-gray-600 focus:outline-none border-2 border-gray-300 focus:border-blue-500 rounded-4xl bg-white"
+          className="w-full h-full py-2 pl-14 pr-4 text-sm placeholder-[#4a5565] focus:outline-none border-2 border-[#d1d5dc] focus:border-[#1765cc] rounded-4xl bg-white"
         />
         <button type="submit" className="sr-only">
           搜索

@@ -109,7 +109,7 @@ export function EnterpriseCard({
           enterprise.contacts &&
           enterprise.contacts.length > 0 && (
             <div className="px-4 pt-6 pb-3 lg:pl-8 lg:pr-5 lg:py-5 flex-1">
-              <h2 className="text-lg lg:text-2xl font-semibold mb-4 text-gray-800">
+              <h2 className="text-lg lg:text-2xl font-semibold mb-4 text-[#141414]">
                 企业联系人ID
               </h2>
               <ul>

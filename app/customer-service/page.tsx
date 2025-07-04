@@ -78,42 +78,42 @@ export default function CustomerService() {
               <table className="my-3">
                 <tbody>
                   <tr className="text-center">
-                    <td className="border-t border-l border-gray-300 p-2">
+                    <td className="border-t border-l border-[#d1d5dc] p-2">
                       合同编号
                     </td>
-                    <td className="border-t border-l border-r border-gray-300 p-2">
+                    <td className="border-t border-l border-r border-[#d1d5dc] p-2">
                       xxxxxxxxxx
                     </td>
                   </tr>
                   <tr className="text-center">
-                    <td className="border-t border-l border-gray-300 p-2">
+                    <td className="border-t border-l border-[#d1d5dc] p-2">
                       发票总额
                     </td>
-                    <td className="border-t border-l border-r border-gray-300 p-2">
+                    <td className="border-t border-l border-r border-[#d1d5dc] p-2">
                       xxx.xx万
                     </td>
                   </tr>
                   <tr className="text-center">
-                    <td className="border-t border-l border-gray-300 p-2">
+                    <td className="border-t border-l border-[#d1d5dc] p-2">
                       发票日期
                     </td>
-                    <td className="border-t border-l border-r border-gray-300 p-2">
+                    <td className="border-t border-l border-r border-[#d1d5dc] p-2">
                       xxxx年xx月xx日
                     </td>
                   </tr>
                   <tr className="text-center">
-                    <td className="border-t border-l border-gray-300 p-2">
+                    <td className="border-t border-l border-[#d1d5dc] p-2">
                       客户名称
                     </td>
-                    <td className="border-t border-l border-r border-gray-300 p-2">
+                    <td className="border-t border-l border-r border-[#d1d5dc] p-2">
                       xxx公司
                     </td>
                   </tr>
                   <tr className="text-center">
-                    <td className="border-t border-l border-b border-gray-300 p-2">
+                    <td className="border-t border-l border-b border-[#d1d5dc] p-2">
                       客户银行账户
                     </td>
-                    <td className="border-t border-l border-b border-r border-gray-300 p-2">
+                    <td className="border-t border-l border-b border-r border-[#d1d5dc] p-2">
                       xx银行 xxxxxxxxxxxxxx
                     </td>
                   </tr>
