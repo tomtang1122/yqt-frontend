@@ -1,4 +1,4 @@
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export const useEmbedApp = () => {
@@ -9,6 +9,24 @@ export const useEmbedApp = () => {
     embedAppSearchParams: embedAppSearchParams,
     isEmbedded: embedAppSearchParams === "true",
   };
+};
+
+export const useRouterWithParams = () => {
+  const router = useRouter();
+  const { embedAppSearchParams, isEmbedded } = useEmbedApp();
+
+  const push = (url: string) => {
+    const [path, rawQuery] = url.split("?");
+    const resultPath = isEmbedded
+      ? `${path}?${
+          rawQuery ? `${rawQuery}&` : ""
+        }embedApp=${embedAppSearchParams}`
+      : url;
+
+    router.push(resultPath);
+  };
+
+  return { push };
 };
 
 export const useIsMobile = (): boolean => {

@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { useRouterWithParams } from "@lib/hook";
 
 const searchIcon = (
   <svg
@@ -21,7 +22,7 @@ const searchIcon = (
 export function EnterpriseSearch() {
   const [isExpanded, setIsExpanded] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const router = useRouter();
+  const router = useRouterWithParams();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -4,12 +4,15 @@ import Link, { LinkProps } from "next/link";
 import { useEmbedApp } from "@lib/hook";
 import { Suspense } from "react";
 
-const LinkWithParamsCustom = (
-  LinkProps: LinkProps & {
-    children?: React.ReactNode | undefined;
-    className?: string | undefined;
-  }
-) => {
+interface CustomLinkProps extends Omit<LinkProps, "href"> {
+  href: string;
+  children?: React.ReactNode;
+  className?: string;
+}
+
+const LinkWithParamsCustom = (LinkProps: CustomLinkProps) => {
+  const linkHref = LinkProps.href;
+  const [path, rawQuery] = linkHref.split("?");
   const { embedAppSearchParams, isEmbedded } = useEmbedApp();
 
   return (
@@ -17,19 +20,16 @@ const LinkWithParamsCustom = (
       {...LinkProps}
       href={
         isEmbedded
-          ? `${LinkProps.href}?embedApp=${embedAppSearchParams}`
-          : LinkProps.href
+          ? `${path}?${
+              rawQuery ? `${rawQuery}&` : ""
+            }embedApp=${embedAppSearchParams}`
+          : linkHref
       }
     />
   );
 };
 
-export default function LinkWithParams(
-  LinkProps: LinkProps & {
-    children?: React.ReactNode | undefined;
-    className?: string | undefined;
-  }
-) {
+export default function LinkWithParams(LinkProps: CustomLinkProps) {
   return (
     <Suspense>
       <LinkWithParamsCustom {...LinkProps} />
