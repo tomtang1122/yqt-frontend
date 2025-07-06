@@ -1,11 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { useRef, type TouchEventHandler } from "react";
+import { useRef, type TouchEventHandler, Suspense } from "react";
 import cashback from "@assets/cashback.png";
 import Image from "next/image";
 import { Enterprise } from "@TS/enterprise";
-import { useSearchParams } from "next/navigation";
+import { useEmbedApp } from "@lib/hook";
 import { copyToClipboard } from "@lib/utils";
 import { toast } from "sonner";
 
@@ -19,13 +19,12 @@ export function EnterpriseCard({
   hasContacts,
 }: EnterpriseCardProps) {
   const timerRef = useRef<number | null>(null);
-  const searchParams = useSearchParams();
-  const isEmbedApp = searchParams.get("embedApp") === "true";
+  const { isEmbedded } = useEmbedApp();
 
   const handleTouchStart: TouchEventHandler<HTMLAnchorElement> = (e) => {
     if (
       !(typeof window !== "undefined" && "ontouchstart" in window) ||
-      !isEmbedApp
+      !isEmbedded
     )
       return;
     const linkElement = e.currentTarget;
@@ -126,5 +125,13 @@ export function EnterpriseCard({
           )}
       </div>
     </a>
+  );
+}
+
+export function EnterpriseCardSuspense(props: EnterpriseCardProps) {
+  return (
+    <Suspense>
+      <EnterpriseCard {...props} />
+    </Suspense>
   );
 }

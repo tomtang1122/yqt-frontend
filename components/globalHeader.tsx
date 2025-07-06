@@ -3,6 +3,7 @@ import logo from "@assets/logo.png";
 import DropMenu from "@components/dropMenu";
 import LinkWithParams from "@components/LinkWithParams";
 import { EnterpriseSearch } from "./enterpriseSearch";
+import { Suspense } from "react";
 
 export default function GlobalHeader() {
   return (
@@ -23,7 +24,9 @@ export default function GlobalHeader() {
         <span>云雀台</span>
       </LinkWithParams>
       <div className="flex items-center gap-3 lg:gap-6">
-        <EnterpriseSearch />
+        <Suspense>
+          <EnterpriseSearch />
+        </Suspense>
         <DropMenu />
         <div className="hidden lg:flex items-center gap-6">
           <LinkWithParams

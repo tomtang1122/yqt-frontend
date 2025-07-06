@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Enterprise } from "@TS/enterprise";
 import type { Swiper as SwiperType } from "swiper/types";
 import { useIsMobile } from "@lib/hook";
-import { EnterpriseCard } from "./enterpriseCard";
+import { EnterpriseCardSuspense } from "./enterpriseCard";
 
 import "swiper/css";
 
@@ -26,7 +26,6 @@ export function EnterpriseCarousel({
   );
 
   const swiperRef = useRef<SwiperType | null>(null);
-  const timerRef = useRef<number | null>(null);
   const autoScrollTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
 
@@ -70,9 +69,6 @@ export function EnterpriseCarousel({
       if (autoScrollTimerRef.current) {
         clearTimeout(autoScrollTimerRef.current);
       }
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
       if (swiper) {
         swiper.off("touchStart");
         swiper.off("touchEnd");
@@ -93,14 +89,14 @@ export function EnterpriseCarousel({
         {isMobile
           ? enterprises.map((enterprise, index) => (
               <SwiperSlide key={index}>
-                <EnterpriseCard enterprise={enterprise} />
+                <EnterpriseCardSuspense enterprise={enterprise} />
               </SwiperSlide>
             ))
           : renderEnterprises.map((enterpriseArray, index) => (
               <SwiperSlide key={index}>
                 <div className="flex flex-col gap-3 lg:gap-6 lg:flex-row">
                   {enterpriseArray.map((enterprise) => (
-                    <EnterpriseCard
+                    <EnterpriseCardSuspense
                       key={enterprise.enterpriseID}
                       enterprise={enterprise}
                     />

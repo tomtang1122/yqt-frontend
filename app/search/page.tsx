@@ -1,5 +1,5 @@
 import { post } from "@lib/fetch";
-import { EnterpriseCard } from "@components/enterpriseCard";
+import { EnterpriseCardSuspense } from "@components/enterpriseCard";
 import { EnterpriseListResponse } from "@TS/enterprise";
 import HeroBanner from "@components/heroBanner";
 
@@ -27,7 +27,7 @@ export default async function SearchPage(props: {
         </h1>
         <div className="flex flex-col w-[800px] max-w-full min-h-[60dvh] mx-auto overflow-auto gap-8">
           {enterprises?.map((enterprise) => (
-            <EnterpriseCard
+            <EnterpriseCardSuspense
               key={enterprise.enterpriseID}
               enterprise={enterprise}
               hasContacts
