@@ -94,7 +94,7 @@ export function EnterpriseCard({
                       enterprise?.tagsTypes?.[j] === 2,
                     "text-[#E37400] bg-[#FFF4E5]":
                       enterprise?.tagsTypes?.[j] === 3,
-                    "text-[#00D7EC] bg-[#E6FAFC]":
+                    "text-[#A21CAF] bg-[#FBE4FB]":
                       enterprise?.tagsTypes?.[j] === 4,
                   }
                 )}

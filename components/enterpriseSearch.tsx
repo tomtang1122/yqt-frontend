@@ -51,12 +51,17 @@ export function EnterpriseSearch() {
       <button
         type="button"
         onClick={toggleExpanded}
-        className="w-6 lg:w-8 h-6 lg:h-8 flex items-center justify-center cursor-pointer bg-[#1A73E8] hover:bg-[#1765cc] text-white rounded-full transition-all duration-300"
+        className="flex items-center gap-1 lg:gap-2 rounded-4xl bg-[#E8F0FE] pl-2 lg:pl-3 cursor-pointer"
         aria-label={isExpanded ? "关闭搜索" : "打开搜索"}
         aria-expanded={isExpanded}
         aria-controls="search-form"
       >
-        {searchIcon}
+        <span className="text-xs lg:text-sm text-[#1A73E8] font-semibold">
+          品牌商询价
+        </span>
+        <span className="w-6 lg:w-8 h-6 lg:h-8 flex items-center justify-center bg-[#1A73E8] hover:bg-[#1765cc] text-white rounded-full transition-all duration-300">
+          {searchIcon}
+        </span>
       </button>
 
       {isExpanded && (
@@ -86,7 +91,7 @@ export function EnterpriseSearch() {
           id="search-input"
           name="search"
           type="search"
-          placeholder="品牌搜索..."
+          placeholder="品牌品牌与产品..."
           className="w-full h-full py-2 pl-14 pr-4 text-sm placeholder-[#4a5565] focus:outline-none border-2 border-[#d1d5dc] focus:border-[#1765cc] rounded-4xl bg-white"
         />
         <button type="submit" className="sr-only">
