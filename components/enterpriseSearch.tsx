@@ -91,7 +91,7 @@ export function EnterpriseSearch() {
           id="search-input"
           name="search"
           type="search"
-          placeholder="品牌品牌与产品..."
+          placeholder="搜索品牌与产品..."
           className="w-full h-full py-2 pl-14 pr-4 text-sm placeholder-[#4a5565] focus:outline-none border-2 border-[#d1d5dc] focus:border-[#1765cc] rounded-4xl bg-white"
         />
         <button type="submit" className="sr-only">

@@ -20,7 +20,7 @@ export default function AboutUs() {
         breadcrumbs={[{ name: "首页", href: "/" }, { name: "关于我们" }]}
       />
       <Article
-        title="关于云雀台"
+        title="关于云雀台(About Us)"
         content={
           <div>
             中国科技产业商业信息融合数字化平台
@@ -29,7 +29,7 @@ export default function AboutUs() {
             云雀台是中国科技产业采购与商业信息交互服务商，我们汇聚了众多中国知名的科技企业，包括：AI、教育、通讯、交通、电力、医疗、农业、公共安全、建筑等核心领域。
             <br />
             <br />
-            我们的核心功能:
+            <span className="font-semibold">我们的核心功能:</span>
             <br />
             <br />
             <div className="pl-4.5">
@@ -86,7 +86,8 @@ export default function AboutUs() {
               <br />
               <br />
             </div>
-            欢迎全球采购商与科技企业访问云雀台官网:[官网链接]或下载注册APP，与我们取得联系，云雀台客户服务中心（ID
+            欢迎全球采购商与科技企业访问云雀台官网: https://yunquetai.com/
+            或下载注册APP，与我们取得联系，云雀台客户服务中心（ID
             10000）将竭力为您服务。
             <div className="border-[#EBEEF5] border-b-2 mt-2" />
             <br />
@@ -104,7 +105,7 @@ export default function AboutUs() {
             agriculture, public security, construction, and more.
             <br />
             <br />
-            Our Core Functions:
+            <span className="font-semibold">Our Core Functions:</span>
             <br />
             <br />
             <div className="pl-4.5">
@@ -177,9 +178,9 @@ export default function AboutUs() {
               <br />
             </div>
             We welcome global buyers and technology companies to visit the
-            Yunquetai website: [Website Link] or download and register the APP
-            to contact us. The Yunquetai Customer Service Center (ID 10000) will
-            strive to serve you.
+            Yunquetai website:https://yunquetai.com/ or download and register
+            the APP to contact us. The Yunquetai Customer Service Center (ID
+            10000) will strive to serve you.
             <div className="border-[#EBEEF5] border-b-2 mt-2" />
             <br />
             <br />
@@ -191,7 +192,7 @@ export default function AboutUs() {
             雲雀台は中国科技産業の調達と商業情報交換サービスプロバイダーです。私たちは多くの中国の有名な科技企業を集めており、AI、教育、通信、交通、電力、医療、農業、公共安全、建設などの核心分野を含みます。
             <br />
             <br />
-            私たちの核心機能：
+            <span className="font-semibold">私たちの核心機能：</span>
             <br />
             <br />
             <div className="pl-4.5">
@@ -248,7 +249,8 @@ export default function AboutUs() {
               <br />
               <br />
             </div>
-            グローバルバイヤーと科技企業が雲雀台の公式サイトを訪問することを歓迎します：[公式サイトリンク]またはアプリをダウンロードして登録し、私たちと連絡を取ってください。雲雀台カスタマーサービスセンター（ID
+            グローバルバイヤーと科技企業が雲雀台の公式サイトを訪問することを歓迎します：https://yunquetai.com/
+            またはアプリをダウンロードして登録し、私たちと連絡を取ってください。雲雀台カスタマーサービスセンター（ID
             10000）があなたにサービスを提供するよう努めます。
             <div className="border-[#EBEEF5] border-b-2 mt-2" />
             <br />
@@ -267,7 +269,7 @@ export default function AboutUs() {
             öffentliche Sicherheit, Bauwesen und mehr.
             <br />
             <br />
-            Unsere Kernfunktionen:
+            <span className="font-semibold">Unsere Kernfunktionen:</span>
             <br />
             <br />
             <div className="pl-4.5">
@@ -342,7 +344,7 @@ export default function AboutUs() {
               <br />
             </div>
             Wir laden globale Käufer und Technologieunternehmen ein, die
-            Yunquetai-Website zu besuchen: [Website-Link] oder die APP
+            Yunquetai-Website zu besuchen:https://yunquetai.com/ oder die APP
             herunterzuladen und sich zu registrieren, um mit uns in Kontakt zu
             treten. Das Yunquetai-Kundenservicezentrum (ID 10000) wird sich
             bemühen, Ihnen zu dienen.
@@ -363,7 +365,7 @@ export default function AboutUs() {
             строительство и другие.
             <br />
             <br />
-            Наши основные функции:
+            <span className="font-semibold">Наши основные функции:</span>
             <br />
             <br />
             <div className="pl-4.5">
@@ -437,7 +439,7 @@ export default function AboutUs() {
               <br />
             </div>
             Мы приглашаем глобальных покупателей и технологические компании
-            посетить веб-сайт Юнцюэтай: [ссылка на веб-сайт] или скачать и
+            посетить веб-сайт Юнцюэтай:https://yunquetai.com/ или скачать и
             зарегистрировать приложение, чтобы связаться с нами. Центр
             обслуживания клиентов Юнцюэтай (ID 10000) будет стремиться служить
             вам.
@@ -455,7 +457,7 @@ export default function AboutUs() {
             الاتصالات، النقل، الطاقة، الطب، الزراعة، الأمن العام، البناء وغيرها.
             <br />
             <br />
-            وظائفنا الأساسية:
+            <span className="font-semibold">وظائفنا الأساسية:</span>
             <br />
             <br />
             <div className="pr-4.5">
@@ -525,8 +527,11 @@ export default function AboutUs() {
               <br />
             </div>
             ندعو المشترين العالميين وشركات التكنولوجيا لزيارة موقع يونكيتاي:
-            [رابط الموقع] أو تحميل وتسجيل التطبيق للتواصل معنا. مركز خدمة
-            العملاء يونكيتاي (ID 10000) سيسعى لخدمتك.
+            <a href="https://yunquetai.com/" target="_blank">
+              https://yunquetai.com/
+            </a>{" "}
+            أو تحميل وتسجيل التطبيق للتواصل معنا. مركز خدمة العملاء يونكيتاي (ID
+            10000) سيسعى لخدمتك.
           </div>
         }
       />
