@@ -2,8 +2,6 @@
 
 import clsx from "clsx";
 import { useRef, type TouchEventHandler, Suspense } from "react";
-import cashback from "@assets/cashback.png";
-import Image from "next/image";
 import { Enterprise } from "@TS/enterprise";
 import { useEmbedApp } from "@lib/hook";
 import { copyToClipboard } from "@lib/utils";
@@ -53,17 +51,6 @@ export function EnterpriseCard({
       onTouchEnd={clearTimer}
       onTouchMove={clearTimer}
     >
-      {enterprise.isEligibleForCashback && (
-        <div className="absolute top-1 right-1">
-          <Image
-            className="w-8 h-8 lg:w-12 lg:h-12"
-            src={cashback}
-            alt="企业促销logo"
-            width={40}
-            height={40}
-          />
-        </div>
-      )}
       <div className="flex flex-col lg:flex-row h-full overflow-hidden rounded-md bg-[linear-gradient(180deg,_#FFFBEF_0%,_#FFFFFF_100%)]">
         <div className="px-4 py-3 lg:px-5 lg:py-5 flex-1">
           <div className="h-8 lg:h-12 mb-2 lg:mb-4 flex items-center">
@@ -94,7 +81,7 @@ export function EnterpriseCard({
                       enterprise?.tagsTypes?.[j] === 2,
                     "text-[#E37400] bg-[#FFF4E5]":
                       enterprise?.tagsTypes?.[j] === 3,
-                    "text-[#A21CAF] bg-[#FBE4FB]":
+                    "text-[#BE123C] bg-[#FFE4E6]":
                       enterprise?.tagsTypes?.[j] === 4,
                   }
                 )}

@@ -2,8 +2,6 @@ import Article from "@components/article";
 import Breadcrumbs from "@components/breadcrumbs";
 import homeBg from "@assets/home-bg.png";
 import { Metadata } from "next";
-import Image from "next/image";
-import cashback from "@assets/cashback.png";
 
 export const metadata: Metadata = {
   title: "客户服务",
@@ -59,19 +57,10 @@ export default function CustomerService() {
                 <span className="w-1.5 h-5 bg-[#007DFE] absolute left-[-18px] top-1"></span>
                 代理商激励服务
               </h2>
-              <div className="leading-6 mb-1">
-                <span>是指用户向带有</span>
-                <Image
-                  className="inline-block mx-2"
-                  src={cashback}
-                  width={24}
-                  height={24}
-                  alt="企业促销logo"
-                />
-                <span>
-                  标注的企业采购价格之外，用户再额外向厂商申请优惠券额度或者银行贴息优惠券服务，业务流程如下：
-                </span>
-              </div>
+              是指用户向带有{" "}
+              <span className="font-black">&quot;授权信息&quot;</span>{" "}
+              标注的企业采购价格之外，用户再额外向厂商申请优惠券额度或者银行贴息优惠券服务，业务流程如下：
+              <br />
               1、采购人向厂商采购并支付相应货款
               <br />
               2、采购人注册云雀台并向云雀台服务中心提交以下示例业务订单信息：
