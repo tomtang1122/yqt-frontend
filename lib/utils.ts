@@ -1,3 +1,10 @@
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 const IM_REQUEST_URL = "https://yunquetai.com/api";
 /**
  * 将原始图片URL转换为代理URL
