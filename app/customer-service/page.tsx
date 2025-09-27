@@ -58,7 +58,7 @@ export default function CustomerService() {
                 代理商激励服务
               </h2>
               是指用户向带有{" "}
-              <span className="font-black">&quot;授权信息&quot;</span>{" "}
+              <span className="font-black">&quot;授信贴息&quot;</span>{" "}
               标注的企业采购价格之外，用户再额外向厂商申请优惠券额度或者银行贴息优惠券服务，业务流程如下：
               <br />
               1、采购人向厂商采购并支付相应货款

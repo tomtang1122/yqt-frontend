@@ -4,12 +4,7 @@ interface FetchOptions extends Omit<RequestInit, "body"> {
   body?: unknown;
 }
 
-interface ApiResponse<T> {
-  success: boolean;
-  data?: T;
-  message?: string;
-  code?: number;
-}
+import { ApiResponse } from "@TS/api";
 
 /**
  * 封装的 fetch 函数
@@ -20,7 +15,7 @@ interface ApiResponse<T> {
 async function fetchApi<T>(
   url: string,
   options: FetchOptions = {}
-): Promise<ApiResponse<T>> {
+): Promise<{ success: boolean; data?: T; message?: string }> {
   const {
     method = "GET",
     headers = {},
@@ -66,21 +61,27 @@ async function fetchApi<T>(
 
     const response = await Promise.race([fetchPromise, timeoutPromise]);
 
-    const data = await response.json();
+    const apiResponse: ApiResponse<T> = await response.json();
 
-    if (!response.ok) {
-      throw new Error(data.message || `请求失败: ${response.status}`);
+    // 根据接口返回的errCode和errMsg判断成功与否
+    if (apiResponse.errCode === 0 && !apiResponse.errMsg) {
+      // 成功：errCode为0且没有errMsg
+      return {
+        success: true,
+        data: apiResponse.data,
+      };
+    } else {
+      // 失败：errCode大于0或存在errMsg
+      return {
+        success: false,
+        message: apiResponse.errMsg || `错误代码: ${apiResponse.errCode}`,
+      };
     }
-
-    return {
-      data,
-      success: true,
-      code: response.status,
-    };
   } catch (error) {
     console.error(error);
     return {
       success: false,
+      message: error instanceof Error ? error.message : "网络请求失败",
     };
   }
 }

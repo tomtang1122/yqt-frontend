@@ -1,6 +1,4 @@
-import { Response } from "./common";
-
-export type ClientConfigResponse = Response<{
+export type ClientConfigResponse = {
   config: {
     mobileBanner?: string;
     pcBanner?: string;
@@ -9,4 +7,4 @@ export type ClientConfigResponse = Response<{
     mobileBankQRCode?: string;
     pcBankQRCode?: string;
   };
-}>;
+};

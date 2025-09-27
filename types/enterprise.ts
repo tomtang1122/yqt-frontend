@@ -1,5 +1,3 @@
-import { Response } from "./common";
-
 export interface Enterprise {
   logo?: string;
   name?: string;
@@ -17,7 +15,7 @@ export interface Enterprise {
   contacts?: string[];
 }
 
-export type EnterpriseListResponse = Response<{
+export type EnterpriseListResponse = {
   total: number;
   enterprises: Enterprise[];
-}>;
+};

@@ -12,7 +12,7 @@ export default async function Home(props: { searchParams: SearchParams }) {
   const searchParams = await props.searchParams;
   const showDownload = searchParams?.embedApp !== "true";
 
-  const { data: { data: { enterprises = [] } = {} } = {} } =
+  const { data: { enterprises = [] } = {} } =
     await post<EnterpriseListResponse>("/enterprise/query", {
       pagination: { pageNumber: 1, showNumber: 1000000 },
     });

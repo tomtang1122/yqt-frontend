@@ -7,8 +7,10 @@ export default async function HeroBanner({
 }: {
   showDownload: boolean;
 }) {
-  const { data: { data: { config } = {} } = {} } =
-    await post<ClientConfigResponse>("/client_config/get", {});
+  const { data: { config } = {} } = await post<ClientConfigResponse>(
+    "/client_config/get",
+    {}
+  );
 
   return (
     <div className="relative h-[180px] lg:h-[360px]">
