@@ -52,13 +52,12 @@ export default function DropMenu() {
         )}
       >
         <div className="py-2">
-          {/* 产业金融菜单 */}
           <div className="relative">
             <button
               onClick={() => setIsFinanceOpen(!isFinanceOpen)}
               className="flex items-center justify-between w-full py-3 px-4 text-left hover:bg-[rgb(244,_244,_245)] transition-colors duration-200 text-sm"
             >
-              <span>产业金融</span>
+              <span>业务工单</span>
               <DownArrowIcon
                 className={clsx(
                   "w-4 h-4 transition-transform duration-200",
@@ -67,7 +66,6 @@ export default function DropMenu() {
               />
             </button>
 
-            {/* 产业金融子菜单 */}
             <div
               className={clsx(
                 "overflow-hidden transition-all duration-300 ease-in-out",

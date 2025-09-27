@@ -15,7 +15,7 @@ export default function FinanceList() {
       onMouseLeave={() => setIsOpen(false)}
     >
       <div className="flex items-center gap-1 lg:gap-2 py-1.5 px-4 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold cursor-pointer">
-        <span>产业金融</span>
+        <span>业务工单</span>
         <DownArrowIcon className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
       </div>
 
