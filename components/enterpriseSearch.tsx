@@ -2,21 +2,7 @@
 
 import { useState, useRef } from "react";
 import { useRouterWithParams } from "@lib/hook";
-
-const searchIcon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 512 512"
-    className="w-3.5 h-3.5 lg:w-4 lg:h-4"
-    aria-hidden="true"
-    role="img"
-  >
-    <path
-      fill="currentColor"
-      d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
-    />
-  </svg>
-);
+import { SearchIcon } from "@components/Icons/searchIcon";
 
 export function EnterpriseSearch() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -47,7 +33,7 @@ export function EnterpriseSearch() {
   };
 
   return (
-    <div className="search-container ml-0 lg:ml-6">
+    <div className="search-container">
       <button
         type="button"
         onClick={toggleExpanded}
@@ -60,7 +46,7 @@ export function EnterpriseSearch() {
           品牌商询价
         </span>
         <span className="w-6 lg:w-8 h-6 lg:h-8 flex items-center justify-center bg-[#1A73E8] hover:bg-[#1765cc] text-white rounded-full transition-all duration-300">
-          {searchIcon}
+          <SearchIcon className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
         </span>
       </button>
 
@@ -81,7 +67,7 @@ export function EnterpriseSearch() {
         role="search"
       >
         <div className="absolute left-4 top-1/2 translate-y-[-50%] w-6 h-6 flex items-center justify-center text-[#6a7282] pointer-events-none">
-          {searchIcon}
+          <SearchIcon className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
         </div>
         <label htmlFor="search-input" className="sr-only">
           搜索品牌

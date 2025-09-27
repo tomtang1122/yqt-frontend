@@ -30,7 +30,7 @@ export default async function HeroBanner({
           className="object-cover hidden lg:block"
         />
       )}
-      <div className="absolute top-0 left-0 w-full h-full pb-3 px-4 lg:px-[120px] lg:pb-8 flex justify-between items-end">
+      <div className="absolute top-0 left-0 w-full h-full pb-3 px-4 lg:px-8 xl:px-[120px] lg:pb-8 flex justify-between items-end">
         <div className="flex flex-col items-start justify-center">
           {config?.appFile && showDownload ? (
             <a
