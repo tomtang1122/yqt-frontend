@@ -4,7 +4,7 @@ import DropMenu from "@components/dropMenu";
 import LinkWithParams from "@components/LinkWithParams";
 import { EnterpriseSearch } from "./enterpriseSearch";
 import { Suspense } from "react";
-import { DownArrowIcon } from "@components/Icons/downArrowIcon";
+import FinanceList from "@components/financeList";
 
 export default function GlobalHeader() {
   return (
@@ -25,10 +25,7 @@ export default function GlobalHeader() {
           </div>
           <span>云雀台</span>
         </LinkWithParams>
-        <div className="flex items-center gap-1 lg:gap-2 py-1.5 px-4 transition-all duration-200 hover:bg-[rgb(244,_244,_245)] font-semibold cursor-pointer">
-          <span>产业金融</span>
-          <DownArrowIcon className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
-        </div>
+        <FinanceList />
       </div>
       <div className="flex items-center gap-3 lg:gap-6">
         <Suspense>
