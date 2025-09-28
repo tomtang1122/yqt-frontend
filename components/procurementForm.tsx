@@ -24,11 +24,17 @@ const formSchema = z.object({
   vendor: z.string().min(1, "品牌厂商名称不能为空"),
   integrator: z.string().optional(),
   endCustomer: z.string().optional(),
-  purchaseAmount: z.number().min(0.01, "采购金额必须大于0"),
+  purchaseAmount: z
+    .number()
+    .optional()
+    .refine((val) => val !== undefined && val > 0, "采购金额必须大于0"),
   paymentTermDays: z
     .number()
-    .min(0, "付款期限不能小于0")
-    .max(90, "付款期限不能超过90天"),
+    .optional()
+    .refine(
+      (val) => val !== undefined && val >= 0 && val <= 90,
+      "付款期限必须在0-90天之间"
+    ),
   originOrgName: z.string().min(1, "业务发起机构不能为空"),
   contactName: z.string().min(1, "联系人姓名不能为空"),
   contactPhone: z.string().min(1, "联系电话不能为空"),
@@ -50,8 +56,8 @@ export default function ProcurementForm() {
       vendor: "",
       integrator: "",
       endCustomer: "",
-      purchaseAmount: 0,
-      paymentTermDays: 30,
+      purchaseAmount: undefined,
+      paymentTermDays: undefined,
       originOrgName: "",
       contactName: "",
       contactPhone: "",
@@ -135,8 +141,8 @@ export default function ProcurementForm() {
                 <span className="font-medium text-gray-900">
                   {submitSuccess.submitDate}
                 </span>
-                ，请您通过云雀台 APP
-                向客户服务中心提交工单编号查询业务进度与结果
+                ，请您通过云雀台 APP 向客户服务中心（ID
+                10000）提交工单编号查询业务进度与结果
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
                 在此期间云雀台工作人员或合作机构可能会与您取得联系，请您保持联系方式畅通。
@@ -155,7 +161,7 @@ export default function ProcurementForm() {
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
             额度申请表单
           </h2>
-          <p className="text-gray-600">请填写以下信息提交采购申请</p>
+          <p className="text-gray-600">请填写以下信息提交额度申请</p>
         </div>
 
         <Form {...form}>
@@ -208,7 +214,7 @@ export default function ProcurementForm() {
                 name="endCustomer"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm font-medium text-gray-700">
+                    <FormLabel className="text-sm font-semibold text-gray-900">
                       终端客户名称
                     </FormLabel>
                     <FormControl>
@@ -258,8 +264,13 @@ export default function ProcurementForm() {
                       <Input
                         type="number"
                         placeholder="请输入采购金额"
-                        {...field}
-                        onChange={(e) => field.onChange(Number(e.target.value))}
+                        value={field.value ?? ""}
+                        onChange={(e) => {
+                          const value = e.target.value;
+                          field.onChange(
+                            value === "" ? undefined : Number(value)
+                          );
+                        }}
                         className="mt-1"
                       />
                     </FormControl>
@@ -280,8 +291,13 @@ export default function ProcurementForm() {
                       <Input
                         type="number"
                         placeholder="请输入付款期限（0-90天）"
-                        {...field}
-                        onChange={(e) => field.onChange(Number(e.target.value))}
+                        value={field.value ?? ""}
+                        onChange={(e) => {
+                          const value = e.target.value;
+                          field.onChange(
+                            value === "" ? undefined : Number(value)
+                          );
+                        }}
                         className="mt-1"
                       />
                     </FormControl>

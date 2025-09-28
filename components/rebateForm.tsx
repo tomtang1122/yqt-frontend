@@ -132,8 +132,8 @@ export default function RebateForm() {
                 <span className="font-medium text-gray-900">
                   {submitSuccess.submitDate}
                 </span>
-                ，请您通过云雀台 APP
-                向客户服务中心提交工单编号查询业务进度与结果
+                ，请您通过云雀台 APP 向客户服务中心（ID
+                10000）提交工单编号查询业务进度与结果
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
                 在此期间云雀台工作人员或合作机构可能会与您取得联系，请您保持联系方式畅通。
