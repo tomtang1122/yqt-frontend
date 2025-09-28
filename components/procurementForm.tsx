@@ -32,8 +32,8 @@ const formSchema = z.object({
     .number()
     .optional()
     .refine(
-      (val) => val !== undefined && val >= 0 && val <= 90,
-      "付款期限必须在0-90天之间"
+      (val) => val !== undefined && val >= 0 && val <= 365,
+      "付款期限必须在0-365天之间"
     ),
   originOrgName: z.string().min(1, "业务发起机构不能为空"),
   contactName: z.string().min(1, "联系人姓名不能为空"),
@@ -258,7 +258,7 @@ export default function ProcurementForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-sm font-medium text-gray-700">
-                      采购金额（元） *
+                      采购金额（万元） *
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -290,7 +290,7 @@ export default function ProcurementForm() {
                     <FormControl>
                       <Input
                         type="number"
-                        placeholder="请输入付款期限（0-90天）"
+                        placeholder="请输入付款期限（0-365天）"
                         value={field.value ?? ""}
                         onChange={(e) => {
                           const value = e.target.value;

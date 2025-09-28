@@ -208,7 +208,7 @@ export default function RebateForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-sm font-medium text-gray-700">
-                      发票金额（元）
+                      发票金额（万元）
                     </FormLabel>
                     <FormControl>
                       <Input
